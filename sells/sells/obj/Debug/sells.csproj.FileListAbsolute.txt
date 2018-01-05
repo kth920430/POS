@@ -1,0 +1,11 @@
+C:\C\sells\sells\bin\Debug\sells.exe.config
+C:\C\sells\sells\bin\Debug\sells.exe
+C:\C\sells\sells\bin\Debug\sells.pdb
+C:\C\sells\sells\obj\Debug\sells.csprojResolveAssemblyReference.cache
+C:\C\sells\sells\obj\Debug\sells.Form1.resources
+C:\C\sells\sells\obj\Debug\sells.Properties.Resources.resources
+C:\C\sells\sells\obj\Debug\sells.csproj.GenerateResource.Cache
+C:\C\sells\sells\obj\Debug\sells.csproj.CoreCompileInputs.cache
+C:\C\sells\sells\obj\Debug\sells.exe
+C:\C\sells\sells\obj\Debug\sells.pdb
+C:\C\sells\sells\obj\Debug\sells.frmChart.resources
