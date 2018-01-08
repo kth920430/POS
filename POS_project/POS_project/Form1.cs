@@ -22,6 +22,10 @@ namespace POS_project
         Form5 f5 = new Form5();
         Form6 f6 = new Form6();
         Form7 f7 = new Form7();
+        Form9 f9 = new Form9();
+        Form10 f10 = new Form10();
+        Form11 f11 = new Form11();
+
 
 
         private void 현황ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +42,15 @@ namespace POS_project
 
         private void 환경설정ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            f4.MdiParent = this;
+            f4.Dock = DockStyle.Fill;
 
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            f4.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -109,6 +121,45 @@ namespace POS_project
                 MdiChildren[i].Close();
             }
             this.Close();
+        }
+
+        private void 인쇄설정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f9.MdiParent = this;
+            f9.Dock = DockStyle.Fill;
+
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            f9.Show();
+        }
+
+        private void 잠깐외출ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //f10.MdiParent = this;
+            //f10.Dock = DockStyle.Fill;
+
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            f10.ShowDialog();
+        }
+
+        private void 출근ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f11.MdiParent = this;
+            f11.Dock = DockStyle.Fill;
+
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            f11.Show();
         }
     }
 }

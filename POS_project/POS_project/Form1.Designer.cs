@@ -33,7 +33,6 @@
             this.현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품목관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.자료관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.환경설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.인쇄설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.회원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.잠깐외출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +44,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.환경설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.출근ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +63,12 @@
             this.환경설정ToolStripMenuItem,
             this.인쇄설정ToolStripMenuItem,
             this.회원ToolStripMenuItem,
-            this.잠깐외출ToolStripMenuItem});
+            this.잠깐외출ToolStripMenuItem,
+            this.출근ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 107);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(150, 0, 150, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(171, 693);
+            this.menuStrip1.Size = new System.Drawing.Size(177, 693);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,20 +105,13 @@
             this.자료관리ToolStripMenuItem.Text = "매출관리";
             this.자료관리ToolStripMenuItem.Click += new System.EventHandler(this.자료관리ToolStripMenuItem_Click);
             // 
-            // 환경설정ToolStripMenuItem
-            // 
-            this.환경설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
-            this.환경설정ToolStripMenuItem.Name = "환경설정ToolStripMenuItem";
-            this.환경설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 44);
-            this.환경설정ToolStripMenuItem.Text = "재고관리";
-            this.환경설정ToolStripMenuItem.Click += new System.EventHandler(this.환경설정ToolStripMenuItem_Click);
-            // 
             // 인쇄설정ToolStripMenuItem
             // 
             this.인쇄설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
             this.인쇄설정ToolStripMenuItem.Name = "인쇄설정ToolStripMenuItem";
-            this.인쇄설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 44);
+            this.인쇄설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.인쇄설정ToolStripMenuItem.Text = "환경설정";
+            this.인쇄설정ToolStripMenuItem.Click += new System.EventHandler(this.인쇄설정ToolStripMenuItem_Click);
             // 
             // 회원ToolStripMenuItem
             // 
@@ -130,8 +125,9 @@
             // 
             this.잠깐외출ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
             this.잠깐외출ToolStripMenuItem.Name = "잠깐외출ToolStripMenuItem";
-            this.잠깐외출ToolStripMenuItem.Size = new System.Drawing.Size(138, 44);
+            this.잠깐외출ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.잠깐외출ToolStripMenuItem.Text = "잠깐외출";
+            this.잠깐외출ToolStripMenuItem.Click += new System.EventHandler(this.잠깐외출ToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -226,6 +222,21 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "00:30";
             // 
+            // 환경설정ToolStripMenuItem
+            // 
+            this.환경설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
+            this.환경설정ToolStripMenuItem.Name = "환경설정ToolStripMenuItem";
+            this.환경설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
+            this.환경설정ToolStripMenuItem.Text = "재고,발주";
+            this.환경설정ToolStripMenuItem.Click += new System.EventHandler(this.환경설정ToolStripMenuItem_Click);
+            // 
+            // 출근ToolStripMenuItem
+            // 
+            this.출근ToolStripMenuItem.Name = "출근ToolStripMenuItem";
+            this.출근ToolStripMenuItem.Size = new System.Drawing.Size(164, 44);
+            this.출근ToolStripMenuItem.Text = "출     근";
+            this.출근ToolStripMenuItem.Click += new System.EventHandler(this.출근ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -261,7 +272,6 @@
         private System.Windows.Forms.ToolStripMenuItem 현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 품목관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 자료관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 환경설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 인쇄설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 회원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 잠깐외출ToolStripMenuItem;
@@ -273,6 +283,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem 환경설정ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 출근ToolStripMenuItem;
     }
 }
 

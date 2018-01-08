@@ -68,6 +68,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -197,7 +198,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.61765F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.38235F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel2.Controls.Add(this.lblSumdis, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSummoney, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSumcount, 1, 0);
@@ -215,9 +216,9 @@
             this.lblSumdis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumdis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumdis.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumdis.Location = new System.Drawing.Point(647, 0);
+            this.lblSumdis.Location = new System.Drawing.Point(646, 0);
             this.lblSumdis.Name = "lblSumdis";
-            this.lblSumdis.Size = new System.Drawing.Size(100, 39);
+            this.lblSumdis.Size = new System.Drawing.Size(101, 39);
             this.lblSumdis.TabIndex = 15;
             this.lblSumdis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -227,7 +228,7 @@
             this.lblSummoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSummoney.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSummoney.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSummoney.Location = new System.Drawing.Point(541, 0);
+            this.lblSummoney.Location = new System.Drawing.Point(540, 0);
             this.lblSummoney.Name = "lblSummoney";
             this.lblSummoney.Size = new System.Drawing.Size(100, 39);
             this.lblSummoney.TabIndex = 14;
@@ -241,7 +242,7 @@
             this.lblSumcount.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSumcount.Location = new System.Drawing.Point(442, 0);
             this.lblSumcount.Name = "lblSumcount";
-            this.lblSumcount.Size = new System.Drawing.Size(93, 39);
+            this.lblSumcount.Size = new System.Drawing.Size(92, 39);
             this.lblSumcount.TabIndex = 13;
             this.lblSumcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -491,7 +492,8 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column2});
+            this.Column2,
+            this.Column7});
             this.dataGridView1.Location = new System.Drawing.Point(14, 57);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
@@ -528,6 +530,11 @@
             // 
             this.Column2.HeaderText = "할인";
             this.Column2.Name = "Column2";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "유통기한";
+            this.Column7.Name = "Column7";
             // 
             // Form6
             // 
@@ -607,5 +614,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

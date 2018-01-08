@@ -15,3 +15,6 @@ C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form5.
 C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form6.resources
 C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form7.resources
 C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form8.resources
+C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form9.resources
+C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form10.resources
+C:\Users\gd3-9\source\repos\POS_project\POS_project\obj\Debug\POS_project.Form11.resources
