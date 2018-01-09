@@ -136,7 +136,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDel.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDel.Location = new System.Drawing.Point(869, 138);
             this.btnDel.Name = "btnDel";
@@ -170,7 +170,7 @@
             // 
             // btnDC
             // 
-            this.btnDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDC.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDC.Location = new System.Drawing.Point(869, 396);
             this.btnDC.Name = "btnDC";
@@ -181,7 +181,7 @@
             // 
             // btnRefund
             // 
-            this.btnRefund.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRefund.BackColor = System.Drawing.Color.Yellow;
             this.btnRefund.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefund.Location = new System.Drawing.Point(869, 482);
             this.btnRefund.Name = "btnRefund";
@@ -292,7 +292,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -354,7 +354,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.61765F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.38235F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel2.Controls.Add(this.lblSumdis, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSummoney, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSumcount, 1, 0);
@@ -372,9 +372,9 @@
             this.lblSumdis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumdis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumdis.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumdis.Location = new System.Drawing.Point(647, 0);
+            this.lblSumdis.Location = new System.Drawing.Point(646, 0);
             this.lblSumdis.Name = "lblSumdis";
-            this.lblSumdis.Size = new System.Drawing.Size(100, 39);
+            this.lblSumdis.Size = new System.Drawing.Size(101, 39);
             this.lblSumdis.TabIndex = 15;
             this.lblSumdis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -384,7 +384,7 @@
             this.lblSummoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSummoney.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSummoney.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSummoney.Location = new System.Drawing.Point(541, 0);
+            this.lblSummoney.Location = new System.Drawing.Point(540, 0);
             this.lblSummoney.Name = "lblSummoney";
             this.lblSummoney.Size = new System.Drawing.Size(100, 39);
             this.lblSummoney.TabIndex = 14;
@@ -398,14 +398,14 @@
             this.lblSumcount.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSumcount.Location = new System.Drawing.Point(442, 0);
             this.lblSumcount.Name = "lblSumcount";
-            this.lblSumcount.Size = new System.Drawing.Size(93, 39);
+            this.lblSumcount.Size = new System.Drawing.Size(92, 39);
             this.lblSumcount.TabIndex = 13;
             this.lblSumcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSumTotal
             // 
             this.lblSumTotal.AutoSize = true;
-            this.lblSumTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblSumTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblSumTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumTotal.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
