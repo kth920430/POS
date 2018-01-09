@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PosProject0._1
+namespace convenienceStorePos
 {
-    public partial class Form1 : Form
+    public partial class frmPayChoice : Form
     {
-        public Form1()
+        public frmPayChoice()
         {
             InitializeComponent();
         }
 
-        private void 판매등록ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
     }
 }
