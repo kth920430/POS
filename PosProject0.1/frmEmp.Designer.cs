@@ -32,7 +32,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.tboxSerach = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,8 +64,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
@@ -97,6 +96,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -133,16 +133,6 @@
             this.tboxSerach.Name = "tboxSerach";
             this.tboxSerach.Size = new System.Drawing.Size(128, 21);
             this.tboxSerach.TabIndex = 29;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(914, 232);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // groupBox1
             // 
@@ -509,18 +499,28 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(42, 73);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(916, 229);
+            this.dataGridView1.TabIndex = 35;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
             // frmEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 680);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tboxSerach);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnModified);
             this.Controls.Add(this.btnDel);
@@ -532,7 +532,6 @@
             this.Text = "frmEmp";
             this.Load += new System.EventHandler(this.frmEmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.splitContainer8.Panel1.ResumeLayout(false);
             this.splitContainer8.Panel1.PerformLayout();
@@ -574,6 +573,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,7 +585,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tboxSerach;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label3;
@@ -618,5 +617,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox mboxPass;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
