@@ -30,12 +30,12 @@ namespace PosProject0._1
             set { empPass = value; }
         }//직원 비밀번호
 
-        private Bitmap empimg;
-        public Bitmap EmpImg
-        {
-            get { return empimg; }
-            set { empimg = value; }
-        }//직원 사진
+        //private Bitmap empimg;
+        //public Bitmap EmpImg
+        //{
+        //    get { return empimg; }
+        //    set { empimg = value; }
+        //}//직원 사진
 
         private int workTime;
         public int WorkTime

@@ -31,11 +31,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tboxSerach = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.label9 = new System.Windows.Forms.Label();
+            this.mboxPass = new System.Windows.Forms.MaskedTextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.cboxdate = new System.Windows.Forms.ComboBox();
@@ -63,7 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnCancle = new System.Windows.Forms.Button();
-            this.mboxPass = new System.Windows.Forms.MaskedTextBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(249, 609);
+            this.button5.Location = new System.Drawing.Point(462, 609);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(62, 23);
             this.button5.TabIndex = 32;
@@ -120,18 +121,18 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(707, 55);
+            this.label11.Location = new System.Drawing.Point(707, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 16);
             this.label11.TabIndex = 30;
             this.label11.Text = "성명";
             // 
-            // textBox5
+            // tboxSerach
             // 
-            this.textBox5.Location = new System.Drawing.Point(755, 50);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(128, 21);
-            this.textBox5.TabIndex = 29;
+            this.tboxSerach.Location = new System.Drawing.Point(755, 34);
+            this.tboxSerach.Name = "tboxSerach";
+            this.tboxSerach.Size = new System.Drawing.Size(128, 21);
+            this.tboxSerach.TabIndex = 29;
             // 
             // dataGridView1
             // 
@@ -141,6 +142,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(914, 232);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // groupBox1
             // 
@@ -188,6 +190,15 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "비번";
+            // 
+            // mboxPass
+            // 
+            this.mboxPass.Location = new System.Drawing.Point(5, 3);
+            this.mboxPass.Mask = "99999999";
+            this.mboxPass.Name = "mboxPass";
+            this.mboxPass.Size = new System.Drawing.Size(125, 22);
+            this.mboxPass.TabIndex = 37;
+            this.mboxPass.ValidatingType = typeof(int);
             // 
             // splitContainer2
             // 
@@ -431,6 +442,7 @@
             this.btnModified.TabIndex = 26;
             this.btnModified.Text = "수정";
             this.btnModified.UseVisualStyleBackColor = true;
+            this.btnModified.Click += new System.EventHandler(this.btnModified_Click);
             // 
             // btnDel
             // 
@@ -440,6 +452,7 @@
             this.btnDel.TabIndex = 25;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnSave
             // 
@@ -453,12 +466,13 @@
             // 
             // btnSerch
             // 
-            this.btnSerch.Location = new System.Drawing.Point(889, 50);
+            this.btnSerch.Location = new System.Drawing.Point(889, 34);
             this.btnSerch.Name = "btnSerch";
             this.btnSerch.Size = new System.Drawing.Size(64, 23);
             this.btnSerch.TabIndex = 23;
             this.btnSerch.Text = "조회";
             this.btnSerch.UseVisualStyleBackColor = true;
+            this.btnSerch.Click += new System.EventHandler(this.btnSerch_Click);
             // 
             // label1
             // 
@@ -477,7 +491,7 @@
             // 
             // btnCancle
             // 
-            this.btnCancle.Location = new System.Drawing.Point(317, 609);
+            this.btnCancle.Location = new System.Drawing.Point(394, 609);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(62, 23);
             this.btnCancle.TabIndex = 33;
@@ -485,25 +499,27 @@
             this.btnCancle.UseVisualStyleBackColor = true;
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
-            // mboxPass
+            // btnReset
             // 
-            this.mboxPass.Location = new System.Drawing.Point(5, 3);
-            this.mboxPass.Mask = "99999999";
-            this.mboxPass.Name = "mboxPass";
-            this.mboxPass.Size = new System.Drawing.Size(125, 22);
-            this.mboxPass.TabIndex = 37;
-            this.mboxPass.ValidatingType = typeof(int);
+            this.btnReset.Location = new System.Drawing.Point(326, 609);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(62, 23);
+            this.btnReset.TabIndex = 34;
+            this.btnReset.Text = "새로고침";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 646);
+            this.ClientSize = new System.Drawing.Size(975, 680);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tboxSerach);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnModified);
@@ -568,7 +584,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tboxSerach;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -601,5 +617,6 @@
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox mboxPass;
+        private System.Windows.Forms.Button btnReset;
     }
 }
