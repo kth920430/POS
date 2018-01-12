@@ -19,3 +19,4 @@ C:\Users\gd3-21\Desktop\Project\PosProject0.1\obj\Debug\PosProject0.1.csproj.Gen
 C:\Users\gd3-21\Desktop\Project\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
 C:\Users\gd3-21\Desktop\Project\PosProject0.1\obj\Debug\PosProject0.1.exe
 C:\Users\gd3-21\Desktop\Project\PosProject0.1\obj\Debug\PosProject0.1.pdb
+C:\Users\gd3-21\Desktop\Project\PosProject0.1\obj\Debug\PosProject0._1.frmPrefer.resources

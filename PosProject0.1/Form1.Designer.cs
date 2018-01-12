@@ -33,8 +33,8 @@
             this.현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품목관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.자료관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.발주설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.환경설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.인쇄설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.회원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.잠깐외출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출근ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +59,8 @@
             this.현황ToolStripMenuItem,
             this.품목관리ToolStripMenuItem,
             this.자료관리ToolStripMenuItem,
+            this.발주설정ToolStripMenuItem,
             this.환경설정ToolStripMenuItem,
-            this.인쇄설정ToolStripMenuItem,
             this.회원ToolStripMenuItem,
             this.잠깐외출ToolStripMenuItem,
             this.출근ToolStripMenuItem});
@@ -100,19 +100,20 @@
             this.자료관리ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.자료관리ToolStripMenuItem.Text = "매출관리";
             // 
+            // 발주설정ToolStripMenuItem
+            // 
+            this.발주설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
+            this.발주설정ToolStripMenuItem.Name = "발주설정ToolStripMenuItem";
+            this.발주설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
+            this.발주설정ToolStripMenuItem.Text = "재고,발주";
+            // 
             // 환경설정ToolStripMenuItem
             // 
             this.환경설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
             this.환경설정ToolStripMenuItem.Name = "환경설정ToolStripMenuItem";
             this.환경설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
-            this.환경설정ToolStripMenuItem.Text = "재고,발주";
-            // 
-            // 인쇄설정ToolStripMenuItem
-            // 
-            this.인쇄설정ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
-            this.인쇄설정ToolStripMenuItem.Name = "인쇄설정ToolStripMenuItem";
-            this.인쇄설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
-            this.인쇄설정ToolStripMenuItem.Text = "환경설정";
+            this.환경설정ToolStripMenuItem.Text = "환경설정";
+            this.환경설정ToolStripMenuItem.Click += new System.EventHandler(this.환경설정ToolStripMenuItem_Click);
             // 
             // 회원ToolStripMenuItem
             // 
@@ -139,7 +140,7 @@
             // 
             this.dateyymmdd.AutoSize = true;
             this.dateyymmdd.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateyymmdd.Location = new System.Drawing.Point(64, 20);
+            this.dateyymmdd.Location = new System.Drawing.Point(63, 20);
             this.dateyymmdd.Name = "dateyymmdd";
             this.dateyymmdd.Size = new System.Drawing.Size(168, 27);
             this.dateyymmdd.TabIndex = 1;
@@ -149,7 +150,7 @@
             // 
             this.dateTime.AutoSize = true;
             this.dateTime.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTime.Location = new System.Drawing.Point(64, 60);
+            this.dateTime.Location = new System.Drawing.Point(63, 60);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(146, 27);
             this.dateTime.TabIndex = 2;
@@ -157,7 +158,7 @@
             // 
             // btnMaster
             // 
-            this.btnMaster.Location = new System.Drawing.Point(1076, 23);
+            this.btnMaster.Location = new System.Drawing.Point(1075, 23);
             this.btnMaster.Name = "btnMaster";
             this.btnMaster.Size = new System.Drawing.Size(63, 34);
             this.btnMaster.TabIndex = 5;
@@ -166,7 +167,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1012, 23);
+            this.button2.Location = new System.Drawing.Point(1011, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 34);
             this.button2.TabIndex = 6;
@@ -175,7 +176,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1145, 23);
+            this.button3.Location = new System.Drawing.Point(1144, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 34);
             this.button3.TabIndex = 7;
@@ -191,7 +192,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel1.Controls.Add(this.dateyymmdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTime, 1, 2);
@@ -238,8 +239,8 @@
         private System.Windows.Forms.ToolStripMenuItem 현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 품목관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 자료관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 발주설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 환경설정ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 인쇄설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 회원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 잠깐외출ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 출근ToolStripMenuItem;

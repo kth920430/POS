@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsVirtualKB.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -59,6 +60,12 @@
     <Compile Include="frmEmp.Designer.cs">
       <DependentUpon>frmEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrefer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrefer.Designer.cs">
+      <DependentUpon>frmPrefer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,6 +73,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmp.resx">
       <DependentUpon>frmEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrefer.resx">
+      <DependentUpon>frmPrefer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

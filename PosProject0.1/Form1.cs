@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +14,35 @@ namespace PosProject0._1
 {
     public partial class Form1 : Form
     {
+        public class Connector
+        {
+            SqlConnection con;
+
+            private void initConnection()
+            {
+                if (con == null)
+                {
+                    con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString);
+                    con.Open();
+                }
+            }
+
+            public SqlConnection getInstance()
+            {
+                if (con == null)
+                {
+                    initConnection();
+                }
+
+                return con;
+            }
+        }
         public Form1()
         {
             InitializeComponent();
         }
-        frmEmp emp = new frmEmp(); 
+        frmEmp emp = new frmEmp();
+        
         private void 회원ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             emp.MdiParent = this;
@@ -28,6 +54,12 @@ namespace PosProject0._1
             }
 
             emp.Show();
+        }
+
+        private void 환경설정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPrefer pre = new frmPrefer();
+            pre.ShowDialog();
         }
     }
 }
