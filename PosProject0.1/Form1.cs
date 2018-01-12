@@ -19,7 +19,6 @@ namespace PosProject0._1
 
         private void 판매등록ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
         }
     }
 }

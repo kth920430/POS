@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCode = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -69,6 +63,7 @@
             this.btnAddPB = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -78,50 +73,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column2});
             this.dataGridView1.Location = new System.Drawing.Point(14, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(849, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "상 품 명";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "단가";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "수량";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "금액";
-            this.Column6.Name = "Column6";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "할인";
-            this.Column2.Name = "Column2";
             // 
             // btnCode
             // 
@@ -133,6 +91,7 @@
             this.btnCode.TabIndex = 1;
             this.btnCode.Text = "바코드 입력";
             this.btnCode.UseVisualStyleBackColor = false;
+            this.btnCode.Click += new System.EventHandler(this.btnCode_Click);
             // 
             // btnDel
             // 
@@ -155,6 +114,7 @@
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "초기화";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnPayChoice
             // 
@@ -280,7 +240,7 @@
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lbl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl3.Location = new System.Drawing.Point(151, 120);
@@ -331,7 +291,7 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lbl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl1.Location = new System.Drawing.Point(151, 0);
@@ -354,7 +314,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.61765F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.38235F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tableLayoutPanel2.Controls.Add(this.lblSumdis, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSummoney, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSumcount, 1, 0);
@@ -372,9 +332,9 @@
             this.lblSumdis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumdis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumdis.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumdis.Location = new System.Drawing.Point(646, 0);
+            this.lblSumdis.Location = new System.Drawing.Point(641, 0);
             this.lblSumdis.Name = "lblSumdis";
-            this.lblSumdis.Size = new System.Drawing.Size(101, 39);
+            this.lblSumdis.Size = new System.Drawing.Size(106, 39);
             this.lblSumdis.TabIndex = 15;
             this.lblSumdis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -384,7 +344,7 @@
             this.lblSummoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSummoney.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSummoney.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSummoney.Location = new System.Drawing.Point(540, 0);
+            this.lblSummoney.Location = new System.Drawing.Point(535, 0);
             this.lblSummoney.Name = "lblSummoney";
             this.lblSummoney.Size = new System.Drawing.Size(100, 39);
             this.lblSummoney.TabIndex = 14;
@@ -396,9 +356,9 @@
             this.lblSumcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumcount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumcount.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumcount.Location = new System.Drawing.Point(442, 0);
+            this.lblSumcount.Location = new System.Drawing.Point(438, 0);
             this.lblSumcount.Name = "lblSumcount";
-            this.lblSumcount.Size = new System.Drawing.Size(92, 39);
+            this.lblSumcount.Size = new System.Drawing.Size(91, 39);
             this.lblSumcount.TabIndex = 13;
             this.lblSumcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -412,7 +372,7 @@
             this.lblSumTotal.ForeColor = System.Drawing.Color.Black;
             this.lblSumTotal.Location = new System.Drawing.Point(3, 0);
             this.lblSumTotal.Name = "lblSumTotal";
-            this.lblSumTotal.Size = new System.Drawing.Size(433, 39);
+            this.lblSumTotal.Size = new System.Drawing.Size(429, 39);
             this.lblSumTotal.TabIndex = 12;
             this.lblSumTotal.Text = "합계 수 량/금 액/할 인";
             this.lblSumTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,6 +463,7 @@
             this.btnAddPB.TabIndex = 22;
             this.btnAddPB.Text = "쓰레기 봉투(20원)";
             this.btnAddPB.UseVisualStyleBackColor = false;
+            this.btnAddPB.Click += new System.EventHandler(this.btnAddPB_Click);
             // 
             // btnClose
             // 
@@ -525,12 +486,23 @@
             this.btnPay.Text = "결제 하기";
             this.btnPay.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(148, 570);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 80);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "키보드";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 654);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddPB);
@@ -565,8 +537,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCode;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnReset;
@@ -577,20 +547,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblSumdis;
         private System.Windows.Forms.Label lblSummoney;
@@ -606,5 +568,9 @@
         private System.Windows.Forms.Button btnAddPB;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl1;
     }
 }
