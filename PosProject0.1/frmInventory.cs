@@ -65,18 +65,12 @@ namespace PosProject0._1
                             dataGridView2.Rows[i].Cells[3].Style.BackColor = Color.Red;
                         }
                     }
-                    
-
-
-                    
                     // 선택열 빼고 나머지는 리드온리로.
                     for (int i = 1; i < dataGridView2.ColumnCount; i++)
                     {
-                        dataGridView2.Columns[i].ReadOnly = true;
+                        dataGridView2.Columns[i].ReadOnly = false;
                         
                     }
-
-                    
                 }
             }
         }
@@ -102,6 +96,8 @@ namespace PosProject0._1
             }
             //dataGridView2.Rows[3].Cells[3].Selected = true;
             //dataGridView2.Focus();
+            dataGridView2.CurrentRow.Cells[3].Selected = true;
+            //dataGridView2.CurrentRow.Cells[3].mode
         }
         
 
