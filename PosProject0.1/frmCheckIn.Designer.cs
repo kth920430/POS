@@ -63,6 +63,7 @@
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 

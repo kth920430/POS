@@ -8,16 +8,16 @@ namespace PosProject0._1
 {
     class CheckIn
     {
-        private string empId;
+        private int empId;
 
-        public string EmpId
+        public int EmpId
         {
             get { return empId; }
             set { empId = value; }
         }
-        private string empPass;
+        private int empPass;
 
-        public string EmpPass
+        public int EmpPass
         {
             get { return empPass; }
             set { empPass = value; }
@@ -31,7 +31,7 @@ namespace PosProject0._1
             set { empName = value; }
         }
 
-        public CheckIn(string empId, string empPass, string empName)
+        public CheckIn(int empId, int empPass, string empName)
         {
             this.empId = empId;
             this.empPass = empPass;
