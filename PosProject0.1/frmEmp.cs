@@ -102,9 +102,10 @@ namespace PosProject0._1
                     cboxdate.Items.Add(0);
 
                     #region EmpView
+                    this.dataGridView1.Columns["EmpPwd"].Visible = false;
                     this.dataGridView1.Columns["EmpImg"].Visible = false;
-                    this.dataGridView1.Columns["RankNum"].Visible = false;
-                    this.dataGridView1.Columns["RankNum1"].Visible = false;
+                    this.dataGridView1.Columns["GradeNum"].Visible = false;
+                    this.dataGridView1.Columns["GradeNum1"].Visible = false;
                     dataGridView1.Columns[0].HeaderText = "사원번호";
                     dataGridView1.Columns[1].HeaderText = "사원명";
                     dataGridView1.Columns[2].HeaderText = "비밀번호";
@@ -142,6 +143,7 @@ namespace PosProject0._1
             cboxDept.Items.Add("우수직원");
             cboxDept.Items.Add("정직원");
             cboxDept.Items.Add("신입");
+            mboxPass.PasswordChar = '*';
         }//폼로드
         private void dataGridView1_Click(object sender, EventArgs e)
         {
@@ -152,6 +154,7 @@ namespace PosProject0._1
             cboxdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             cboxDept.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             lbldate.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            
             using (var con = new Connector().getInstance())
             {
                 using (var cmd = new SqlCommand("EmpImg", con))
@@ -216,7 +219,7 @@ namespace PosProject0._1
                         cmd.Parameters.AddWithValue("@EmpImg", bImg);
                         cmd.Parameters.AddWithValue("@WorkTime", int.Parse(cboxdate.Text));
                         cmd.Parameters.AddWithValue("@Phone", mtboxTel.Text);
-                        cmd.Parameters.AddWithValue("@RankName", cboxDept.Text);
+                        cmd.Parameters.AddWithValue("@GradeName", cboxDept.Text);
                         cmd.Parameters.AddWithValue("@Hiredate", DateTime.Parse(dateTimePicker1.Text));
                         adapter.InsertCommand = cmd;
                         adapter.Update(ds);
@@ -262,7 +265,7 @@ namespace PosProject0._1
                     cmd.Parameters.AddWithValue("@EmpPwd", int.Parse(mboxPass.Text));
                     cmd.Parameters.AddWithValue("@WorkTime", int.Parse(cboxdate.Text));
                     cmd.Parameters.AddWithValue("@Phone", mtboxTel.Text);
-                    cmd.Parameters.AddWithValue("@RankName", cboxDept.Text);
+                    cmd.Parameters.AddWithValue("@GradeName", cboxDept.Text);
                     cmd.Parameters.AddWithValue("@Hiredate", DateTime.Parse(dateTimePicker1.Text));
                     adapter.UpdateCommand = con.CreateCommand();
                     adapter.UpdateCommand = cmd;
