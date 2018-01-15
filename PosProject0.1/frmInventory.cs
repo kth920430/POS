@@ -52,13 +52,11 @@ namespace PosProject0._1
                         dataGridView2.Rows[n].Cells[4].Value = item[3].ToString();
                         dataGridView2.Rows[n].Cells[5].Value = item[4].ToString();
                         dataGridView2.Rows[n].Cells[6].Value = item[5].ToString();
-
-
                     }
-                   
                     dataGridView2.Columns[0].Width = 50;
                     dataGridView2.Columns[1].Width = 500;
                     dataGridView2.AllowUserToAddRows = false; // 맨마지막행 안보이게하기
+
                     //크기조절
                     for (int i = 0; i < dataGridView2.RowCount; i++)
                     {
@@ -77,16 +75,25 @@ namespace PosProject0._1
                     
                 }
             }
-            OrderList(); //발주목록
+            OrderList();
         }
 
-        private void OrderList()
+        internal void OrderList()
         {
+            dataGridView1.Rows.Clear();
+            dataGridView1.AllowUserToAddRows = false;
+            for (int i = 1; i < dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].ReadOnly = true;
+
+            }
+            
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
             {
                 con.Open();
-                using (var cmd = new SqlCommand("OrderTable", con))
+                using (var cmd = new SqlCommand("OrderListTable", con))
                 {
+
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -103,9 +110,15 @@ namespace PosProject0._1
                         dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
                         dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
                         dataGridView1.Rows[n].Cells[5].Value = item[5].ToString();
-
+                        dataGridView1.Rows[n].Cells[6].Value = item[6].ToString();
+                        dataGridView1.Rows[n].Cells[7].Value = item[7].ToString();
+                        dataGridView1.Rows[n].Cells[8].Value = item[8].ToString();
+                        
                     }
-
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        dataGridView1.Rows[i].Height =30;
+                    }
                 }
             }
         }
@@ -135,6 +148,11 @@ namespace PosProject0._1
         }
         
         private void button3_Click(object sender, EventArgs e)
+        {
+            Allselect();//전체선택
+        }
+
+        private void Allselect()
         {
             if (is_Check)
             {
@@ -210,15 +228,11 @@ namespace PosProject0._1
                 if ((bool)dataGridView2.Rows[i].Cells[0].Value == true)
                 {
                     DataRow newRow = dt2.NewRow();
-                    textBox2.Text += dataGridView2.Rows[i].Cells[1].Value.ToString() + "\t";
-                    textBox2.Text += dataGridView2.Rows[i].Cells[3].Value.ToString() + "\t";
-                    textBox2.Text += dataGridView2.Rows[i].Cells[5].Value.ToString() + "\t";
-                    textBox2.Text += dataGridView2.Rows[i].Cells[6].Value.ToString() + "\t";
 
                     newRow[0] = dataGridView2.Rows[i].Cells[1].Value.ToString();
                     newRow[1] = dataGridView2.Rows[i].Cells[6].Value.ToString();
                     newRow[2] = dataGridView2.Rows[i].Cells[5].Value.ToString();
-                    newRow[3] = null;
+                    newRow[3] = 0;
                     dt2.Rows.Add(newRow);
                 }
                 
@@ -229,18 +243,7 @@ namespace PosProject0._1
             Form2 f2 = new Form2(dt2);
             f2.Owner = this;
             f2.ShowDialog();
-            //f2.ShowDialog();
-            //dt2 = dt;
-            //foreach (DataRow item in dt2.Rows)
-            //{
-            //    int n = dataGridView2.Rows.Add();
-            //    dataGridView2.Rows[n].Cells[1].Value = item[0].ToString();
-            //    dataGridView2.Rows[n].Cells[2].Value = item[5].ToString();
-            //    dataGridView2.Rows[n].Cells[3].Value = item[3].ToString();
-            //    dataGridView2.Rows[n].Cells[4].Value = item[4].ToString();
-
-
-            //}
+           
             
 
         }
@@ -248,6 +251,37 @@ namespace PosProject0._1
         private void button4_Click(object sender, EventArgs e)
         {
             tcInven1.SelectedTab = tcInven1.TabPages[1];
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (is_Check)
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].Cells[0].Value = false;
+                }
+                is_Check = false;
+            }
+            else if (is_Check == false)
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].Cells[0].Value = true;
+                }
+                is_Check = true;
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if ((bool)dataGridView1.Rows[i].Cells[0].Value == true)
+                {
+                    dataGridView1.Rows[i].Selected = true;
+                }
+                else if ((bool)dataGridView1.Rows[i].Cells[0].Value == false)
+                {
+                    dataGridView1.Rows[i].Selected = false;
+                }
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
