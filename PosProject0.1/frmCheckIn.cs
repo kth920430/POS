@@ -41,10 +41,7 @@ namespace PosProject0._1
                         employees.Add(new CheckIn(sdr.GetInt32(0), sdr.GetInt32(2), sdr.GetString(1)));
                     }
                 }
-            }
-
-            
-
+            }           
             lobtn = new Control[employees.Count];
             lolab = new Control[employees.Count];
             glp = new Control[employees.Count];
@@ -54,33 +51,74 @@ namespace PosProject0._1
                 CheckLogin(0,employees[i].EmpId, DateTime.Now);
             }
         }
-
+        //퇴근버튼 클릭시
         private void CheckOut(object sender, EventArgs e)
         {
+            
             DateTime chkDate = DateTime.Now;
-
+            gboxindex = 0;
+            gboxlox = 0;
+            gboxloy = 0;
             Button chkout = (Button)sender;
+            
             for (int i = 0; i < employees.Count; i++)
             {
-                //이거고쳐야함
                 if (chkout.Parent.Text == employees[i].EmpName)
                 {
                     CheckLogin(2, employees[i].EmpId, chkDate);
+                    InsertTot(employees[i].EmpId);
                 }
             }
+            //panal1의 모든 컨트롤 지우기
+            foreach (var item in splitContainer1.Panel1.Controls)
+            {
+                Control cons = (Control)item;
+                cons.Hide();
 
+            }
+            
+            //재생성
             for (int i = 0; i < employees.Count; i++)
             {
                 CheckLogin(0, employees[i].EmpId, DateTime.Now);
+
             }
-            //chkout.Parent.Hide();          
+            //chkout.Parent.Hide();                           
         }
 
+        //퇴근시 tottime값 입력
+        private void InsertTot(int empId)
+        {
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
+            {
+                con.Open();
+                using (var cmd = new SqlCommand("SaveTotTime", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EmpId", empId);
+
+                    int i = cmd.ExecuteNonQuery();
+                    if (i == 1)
+                    {
+                        MessageBox.Show("고생하셨습니다.");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("failed");
+                        return;
+                    }
+                }
+            }
+        }
+
+        //숫자패드 입력시 값 입력
         void btnNum_Click(object sender, EventArgs e)
         {
             txtEmpId.Text +=sender.ToString().Split(':')[1].ToString().Trim();
         }
 
+        //엔터버튼 클릭시
         private void btnEnter_Click(object sender, EventArgs e)
         {
             int loginNum = int.Parse(txtEmpId.Text);
@@ -97,6 +135,7 @@ namespace PosProject0._1
             txtEmpId.Focus();
         }
 
+        //로그인 여부 체크
         private void CheckLogin(int islogin,int loginNum, DateTime chkDate)
         {
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
@@ -110,23 +149,30 @@ namespace PosProject0._1
                     
                     if (islogin == 1 && !sdr.HasRows)
                     {
-                        MessageBox.Show("첫출근이양");
+                        //검색결과가 없을때 (초기화후 첫출근/신입사원)
                         InsertLog(loginNum, chkDate);
                     }
                     else
                     {
                         while (sdr.Read())
                         {
-                            if (islogin == 1 || islogin == 0)
+                            if (islogin == 1)
                             {
                                 if (sdr["ChkOutDate"].ToString() == "")
                                 {
-                                    LogOnEmp(loginNum, Convert.ToDateTime(sdr["ChkInDate"]));
-                                    MessageBox.Show("로그인이 이미 되있는거");
+                                    MessageBox.Show("이미 출근완료된 사원입니다.");
                                 }
                                 else
                                 {
                                     InsertLog(loginNum, chkDate);
+                                }
+                            }
+                            else if (islogin == 0)
+                            {
+                                if (sdr["ChkOutDate"].ToString() == "")
+                                {
+                                    //프로그램 강제종료시 출근되있던 인원 재출력
+                                    LogOnEmp(loginNum, Convert.ToDateTime(sdr["ChkInDate"]));
                                 }
                             }
                             else if (islogin == 2)
@@ -140,7 +186,8 @@ namespace PosProject0._1
                 }
             }
         }
-     
+
+        //출근 시간 기입
         private void InsertLog(int loginNum, DateTime checkIn)
         {
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
@@ -155,8 +202,8 @@ namespace PosProject0._1
                     int i = cmd.ExecuteNonQuery();
                     if (i == 1)
                     {
-                        LogOnEmp(loginNum, checkIn);
-                        MessageBox.Show("출근 완료!");
+                        //출근 성공시
+                        LogOnEmp(loginNum, checkIn);                       
                         return;
                     }
                     else
@@ -167,6 +214,8 @@ namespace PosProject0._1
                 }
             }       
         }
+
+        //퇴근
         private void LogOutEmp(int empId,DateTime chkDate, object indate)
         {
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
@@ -182,7 +231,7 @@ namespace PosProject0._1
                     int i = cmd.ExecuteNonQuery();
                     if (i == 1)
                     {
-                        MessageBox.Show("퇴근합니당~!");
+                        //퇴근성공시
                         return;
                     }
                     else
@@ -193,6 +242,7 @@ namespace PosProject0._1
                 }
             }
         }
+        //출근되있는 인원을 폼에 생성
         private void LogOnEmp(int loginNum, DateTime checkIn)
         {
             if (gboxindex != 0 && gboxindex %4 == 0)
@@ -228,14 +278,21 @@ namespace PosProject0._1
                 
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtEmpId.Text = null;
-        }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtEmpId.Text = null;
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            Commute cmu = new Commute();
+            cmu.Show();
         }
     }
 }

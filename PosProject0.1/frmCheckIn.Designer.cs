@@ -29,28 +29,35 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnNumbers = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNum0 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNum9 = new System.Windows.Forms.Button();
-            this.btnNum3 = new System.Windows.Forms.Button();
-            this.btnNum8 = new System.Windows.Forms.Button();
-            this.btnNum6 = new System.Windows.Forms.Button();
-            this.btnNum7 = new System.Windows.Forms.Button();
-            this.btnNum4 = new System.Windows.Forms.Button();
-            this.btnNum2 = new System.Windows.Forms.Button();
-            this.btnNum1 = new System.Windows.Forms.Button();
-            this.btnNum5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.txtEmpId = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.btnLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.btnNumbers.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -68,256 +75,329 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.splitContainer1.Panel2.Controls.Add(this.btnNumbers);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
             this.splitContainer1.Size = new System.Drawing.Size(853, 514);
-            this.splitContainer1.SplitterDistance = 640;
+            this.splitContainer1.SplitterDistance = 636;
             this.splitContainer1.TabIndex = 0;
             // 
-            // btnNumbers
+            // tableLayoutPanel2
             // 
-            this.btnNumbers.ColumnCount = 2;
-            this.btnNumbers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71F));
-            this.btnNumbers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29F));
-            this.btnNumbers.Controls.Add(this.btnCancel, 1, 1);
-            this.btnNumbers.Controls.Add(this.tableLayoutPanel2, 0, 2);
-            this.btnNumbers.Controls.Add(this.tableLayoutPanel1, 0, 1);
-            this.btnNumbers.Controls.Add(this.txtEmpId, 0, 0);
-            this.btnNumbers.Location = new System.Drawing.Point(4, 148);
-            this.btnNumbers.Name = "btnNumbers";
-            this.btnNumbers.RowCount = 3;
-            this.btnNumbers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.10204F));
-            this.btnNumbers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.89796F));
-            this.btnNumbers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.btnNumbers.Size = new System.Drawing.Size(205, 260);
-            this.btnNumbers.TabIndex = 0;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.02778F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLog, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtEmpId, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(25, 20);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(203, 58);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnEnter, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 6;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(213, 514);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.button12, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button7, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button5, 2, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 145);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(203, 86);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.Controls.Add(this.button11, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.button8, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.button4, 2, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 237);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(203, 86);
+            this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.4099F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.5901F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel6.Controls.Add(this.button6, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.button9, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.button10, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 53);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(203, 86);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tableLayoutPanel7.Controls.Add(this.btnCancel, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 329);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(203, 86);
+            this.tableLayoutPanel7.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(148, 34);
+            this.btnCancel.Location = new System.Drawing.Point(69, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(54, 164);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Size = new System.Drawing.Size(131, 80);
+            this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "c";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.02778F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.97222F));
-            this.tableLayoutPanel2.Controls.Add(this.btnNum0, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnEnter, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 210);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(139, 47);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // btnNum0
-            // 
-            this.btnNum0.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum0.FlatAppearance.BorderSize = 0;
-            this.btnNum0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum0.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum0.ForeColor = System.Drawing.Color.White;
-            this.btnNum0.Location = new System.Drawing.Point(3, 3);
-            this.btnNum0.Name = "btnNum0";
-            this.btnNum0.Size = new System.Drawing.Size(41, 41);
-            this.btnNum0.TabIndex = 9;
-            this.btnNum0.Text = "0";
-            this.btnNum0.UseVisualStyleBackColor = false;
-            this.btnNum0.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEnter
             // 
             this.btnEnter.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEnter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEnter.FlatAppearance.BorderSize = 0;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnter.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEnter.ForeColor = System.Drawing.Color.White;
-            this.btnEnter.Location = new System.Drawing.Point(50, 3);
+            this.btnEnter.Location = new System.Drawing.Point(3, 421);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(86, 41);
-            this.btnEnter.TabIndex = 10;
+            this.btnEnter.Size = new System.Drawing.Size(203, 90);
+            this.btnEnter.TabIndex = 36;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
-            // tableLayoutPanel1
+            // button3
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.Controls.Add(this.btnNum9, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum8, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum6, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNum5, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.28099F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.71901F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(139, 170);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(60, 80);
+            this.button3.TabIndex = 35;
+            this.button3.Text = "0";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnNum_Click);
             // 
-            // btnNum9
+            // button4
             // 
-            this.btnNum9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum9.FlatAppearance.BorderSize = 0;
-            this.btnNum9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum9.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum9.ForeColor = System.Drawing.Color.White;
-            this.btnNum9.Location = new System.Drawing.Point(97, 115);
-            this.btnNum9.Name = "btnNum9";
-            this.btnNum9.Size = new System.Drawing.Size(39, 49);
-            this.btnNum9.TabIndex = 8;
-            this.btnNum9.Text = "9";
-            this.btnNum9.UseVisualStyleBackColor = false;
-            this.btnNum9.Click += new System.EventHandler(this.btnNum_Click);
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(137, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(63, 80);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "9";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnNum_Click);
             // 
-            // btnNum3
+            // button5
             // 
-            this.btnNum3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum3.FlatAppearance.BorderSize = 0;
-            this.btnNum3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum3.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum3.ForeColor = System.Drawing.Color.White;
-            this.btnNum3.Location = new System.Drawing.Point(97, 3);
-            this.btnNum3.Name = "btnNum3";
-            this.btnNum3.Size = new System.Drawing.Size(39, 46);
-            this.btnNum3.TabIndex = 2;
-            this.btnNum3.Text = "3";
-            this.btnNum3.UseVisualStyleBackColor = false;
-            this.btnNum3.Click += new System.EventHandler(this.btnNum_Click);
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(137, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(63, 80);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "6";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.btnNum_Click);
             // 
-            // btnNum8
+            // button6
             // 
-            this.btnNum8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum8.FlatAppearance.BorderSize = 0;
-            this.btnNum8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum8.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum8.ForeColor = System.Drawing.Color.White;
-            this.btnNum8.Location = new System.Drawing.Point(50, 115);
-            this.btnNum8.Name = "btnNum8";
-            this.btnNum8.Size = new System.Drawing.Size(41, 49);
-            this.btnNum8.TabIndex = 7;
-            this.btnNum8.Text = "8";
-            this.btnNum8.UseVisualStyleBackColor = false;
-            this.btnNum8.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum6
-            // 
-            this.btnNum6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum6.FlatAppearance.BorderSize = 0;
-            this.btnNum6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum6.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum6.ForeColor = System.Drawing.Color.White;
-            this.btnNum6.Location = new System.Drawing.Point(97, 55);
-            this.btnNum6.Name = "btnNum6";
-            this.btnNum6.Size = new System.Drawing.Size(39, 49);
-            this.btnNum6.TabIndex = 5;
-            this.btnNum6.Text = "6";
-            this.btnNum6.UseVisualStyleBackColor = false;
-            this.btnNum6.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum7
-            // 
-            this.btnNum7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum7.FlatAppearance.BorderSize = 0;
-            this.btnNum7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum7.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum7.ForeColor = System.Drawing.Color.White;
-            this.btnNum7.Location = new System.Drawing.Point(3, 115);
-            this.btnNum7.Name = "btnNum7";
-            this.btnNum7.Size = new System.Drawing.Size(41, 49);
-            this.btnNum7.TabIndex = 6;
-            this.btnNum7.Text = "7";
-            this.btnNum7.UseVisualStyleBackColor = false;
-            this.btnNum7.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum4
-            // 
-            this.btnNum4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum4.FlatAppearance.BorderSize = 0;
-            this.btnNum4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum4.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum4.ForeColor = System.Drawing.Color.White;
-            this.btnNum4.Location = new System.Drawing.Point(3, 55);
-            this.btnNum4.Name = "btnNum4";
-            this.btnNum4.Size = new System.Drawing.Size(41, 49);
-            this.btnNum4.TabIndex = 3;
-            this.btnNum4.Text = "4";
-            this.btnNum4.UseVisualStyleBackColor = false;
-            this.btnNum4.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum2
-            // 
-            this.btnNum2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum2.FlatAppearance.BorderSize = 0;
-            this.btnNum2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum2.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum2.ForeColor = System.Drawing.Color.White;
-            this.btnNum2.Location = new System.Drawing.Point(50, 3);
-            this.btnNum2.Name = "btnNum2";
-            this.btnNum2.Size = new System.Drawing.Size(41, 46);
-            this.btnNum2.TabIndex = 1;
-            this.btnNum2.Text = "2";
-            this.btnNum2.UseVisualStyleBackColor = false;
-            this.btnNum2.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum1
-            // 
-            this.btnNum1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum1.FlatAppearance.BorderSize = 0;
-            this.btnNum1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum1.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum1.ForeColor = System.Drawing.Color.White;
-            this.btnNum1.Location = new System.Drawing.Point(3, 3);
-            this.btnNum1.Name = "btnNum1";
-            this.btnNum1.Size = new System.Drawing.Size(41, 46);
-            this.btnNum1.TabIndex = 0;
-            this.btnNum1.Tag = "";
-            this.btnNum1.Text = "1";
-            this.btnNum1.UseVisualStyleBackColor = false;
-            this.btnNum1.Click += new System.EventHandler(this.btnNum_Click);
-            // 
-            // btnNum5
-            // 
-            this.btnNum5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNum5.FlatAppearance.BorderSize = 0;
-            this.btnNum5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNum5.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNum5.ForeColor = System.Drawing.Color.White;
-            this.btnNum5.Location = new System.Drawing.Point(50, 55);
-            this.btnNum5.Name = "btnNum5";
-            this.btnNum5.Size = new System.Drawing.Size(41, 49);
-            this.btnNum5.TabIndex = 4;
-            this.btnNum5.Text = "5";
-            this.btnNum5.UseVisualStyleBackColor = false;
-            this.btnNum5.Click += new System.EventHandler(this.btnNum_Click);
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(138, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(62, 80);
+            this.button6.TabIndex = 28;
+            this.button6.Text = "3";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.btnNum_Click);
             // 
             // txtEmpId
             // 
-            this.txtEmpId.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtEmpId.Location = new System.Drawing.Point(3, 3);
+            this.txtEmpId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmpId.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtEmpId.Location = new System.Drawing.Point(3, 46);
             this.txtEmpId.Multiline = true;
             this.txtEmpId.Name = "txtEmpId";
-            this.txtEmpId.Size = new System.Drawing.Size(139, 25);
-            this.txtEmpId.TabIndex = 11;
+            this.txtEmpId.Size = new System.Drawing.Size(197, 51);
+            this.txtEmpId.TabIndex = 37;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(70, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(61, 80);
+            this.button7.TabIndex = 30;
+            this.button7.Text = "5";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(70, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(61, 80);
+            this.button8.TabIndex = 33;
+            this.button8.Text = "8";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(3, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(61, 80);
+            this.button9.TabIndex = 26;
+            this.button9.Tag = "";
+            this.button9.Text = "1";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(70, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(62, 80);
+            this.button10.TabIndex = 27;
+            this.button10.Text = "2";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(3, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(61, 80);
+            this.button11.TabIndex = 32;
+            this.button11.Text = "7";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(3, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(61, 80);
+            this.button12.TabIndex = 29;
+            this.button12.Text = "4";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.btnNum_Click);
+            // 
+            // btnLog
+            // 
+            this.btnLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLog.Location = new System.Drawing.Point(37, 15);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Size = new System.Drawing.Size(75, 23);
+            this.btnLog.TabIndex = 0;
+            this.btnLog.Text = "출/퇴근기록";
+            this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // frmCheckIn
             // 
@@ -332,10 +412,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.btnNumbers.ResumeLayout(false);
-            this.btnNumbers.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -343,21 +427,25 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TableLayoutPanel btnNumbers;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button btnNum0;
-        private System.Windows.Forms.Button btnEnter;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnNum9;
-        private System.Windows.Forms.Button btnNum3;
-        private System.Windows.Forms.Button btnNum8;
-        private System.Windows.Forms.Button btnNum6;
-        private System.Windows.Forms.Button btnNum7;
-        private System.Windows.Forms.Button btnNum4;
-        private System.Windows.Forms.Button btnNum2;
-        private System.Windows.Forms.Button btnNum1;
-        private System.Windows.Forms.Button btnNum5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtEmpId;
+        private System.Windows.Forms.Button btnEnter;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLog;
     }
 }
