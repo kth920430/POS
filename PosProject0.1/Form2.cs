@@ -20,33 +20,43 @@ namespace PosProject0._1
         }
         public Form2(DataTable dt) : this()
         {
-            //this.ds = ds;
-
-            //friendsTable = ds.Tables[0];
-            //DataRowCollection rows = friendsTable.Rows;
-
+          
             orderitem = dt;
 
-            
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            int cnt = 0;
             dataGridView1.AllowUserToAddRows = false;
             order();
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    dataGridView1.Rows[i].Cells[3].Value = cnt;
-            //}
         }
 
         private void order()
         {
             
             dataGridView1.DataSource = orderitem;
-            dataGridView1.Columns[0].Width = 200;
-            
-            
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Columns[3].FillWeight = 25;
+            dataGridView1.Columns[2].FillWeight = 35;
+            dataGridView1.Columns[1].FillWeight = 35;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()) == 0)
+                {
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Yellow;
+                }
+                else if (int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()) > 0)
+                {
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.White;
+                } 
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,6 +101,7 @@ namespace PosProject0._1
                 frmInventory fi = (frmInventory)Owner;
                 fi.tcInven1.SelectedTab = fi.tcInven1.TabPages[1];
                 fi.OrderList();
+                
                 //tcInven1.SelectedTab = tcInven1.TabPages[1];
             }
         }
@@ -122,8 +133,17 @@ namespace PosProject0._1
                 {
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                     sum += int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()) * int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                    if (int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()) == 0)
+                    {
+                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Yellow;
+                    }
+                    else if (int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()) > 0)
+                    {
+                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.White;
+                    }
                 }
                 label2.Text = SumValue(sum).ToString() + "원";
+                
             }
             catch (OverflowException)
             {

@@ -28,6 +28,13 @@ namespace PosProject0._1
         DataTable dtOrder;
         private void frmInventory_Load(object sender, EventArgs e)
         {
+            
+            LoadView();
+            OrderList();
+        }
+
+        private void LoadView()
+        {
             button7.Hide();
             
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
@@ -72,10 +79,9 @@ namespace PosProject0._1
                         dataGridView2.Columns[i].ReadOnly = true;
 
                     }
-                    
+
                 }
             }
-            OrderList();
         }
 
         internal void OrderList()
@@ -113,11 +119,14 @@ namespace PosProject0._1
                         dataGridView1.Rows[n].Cells[6].Value = item[6].ToString();
                         dataGridView1.Rows[n].Cells[7].Value = item[7].ToString();
                         dataGridView1.Rows[n].Cells[8].Value = item[8].ToString();
-                        
+                        dataGridView1.Rows[n].Cells[9].Value = item[9].ToString();
+
+
                     }
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
                         dataGridView1.Rows[i].Height =30;
+                        dataGridView1.Rows[i].Cells[0].Value = false;
                     }
                 }
             }
@@ -125,7 +134,80 @@ namespace PosProject0._1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+                
+            //    if ((bool)dataGridView1.Rows[i].Cells[0].Value == true)
+            //    {
+                    using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
+                    {
+                        con.Open();
+                        for (int j = 0; j < dataGridView1.RowCount; j++)
+                        {
+                            if ((bool)dataGridView1.Rows[j].Cells[0].Value == true)
+                            {
+                                using (var cmd = new SqlCommand("AddInvenCnt", con))
+                                {
+
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.Parameters.AddWithValue("@odernum", dataGridView1.Rows[j].Cells[1].Value.ToString());
+                                    int k = cmd.ExecuteNonQuery();
+                                    if (k == 1)
+                                    {
+
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Test");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                //    }
+
+                //}
+            }
+            MessageBox.Show("재고 수량이 추가 되었습니다.");
+            dataGridView2.Rows.Clear(); //그리드뷰 초기화하
+            tcInven1.SelectedTab = tcInven1.TabPages[0];
+            LoadView(); //그리드뷰 수량증가값 보여주기
+            DeleteOrderList();//발주신청목록에서 입고완료된 상품 제거하기
             
+        }
+
+        private void DeleteOrderList()
+        {
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
+            {
+                con.Open();
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    if ((bool)dataGridView1.Rows[j].Cells[0].Value == true)
+                    {
+                        using (var cmd = new SqlCommand("DeleteOrderList", con))
+                        {
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@ordernum", dataGridView1.Rows[j].Cells[1].Value.ToString());
+                            int k = cmd.ExecuteNonQuery();
+                            if (k == 1)
+                            {
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Test");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            OrderList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -133,18 +215,29 @@ namespace PosProject0._1
             System.Diagnostics.Process.Start("osk.exe");
             //clsVirtualKB.Open();
             //textBox1.Focus();
-            button2.Hide();
-            button7.Show();
-            MessageBox.Show("수량을 변경 후 완료버튼을 눌러주세요");
-            int rowindex = dataGridView2.CurrentRow.Index;
-            for (int i = 0; i < dataGridView2.RowCount; i++)
+            try
             {
-                dataGridView2.Rows[i].Cells[3].ReadOnly = false;
+                button2.Hide();
+                button7.Show();
+                MessageBox.Show("수량을 변경 후 완료버튼을 눌러주세요");
+                int rowindex = dataGridView2.CurrentRow.Index;
+                for (int i = 0; i < dataGridView2.RowCount; i++)
+                {
+                    dataGridView2.Rows[i].Cells[3].ReadOnly = false;
+                    
+                }
+                object cell = dataGridView2.CurrentRow.Cells[3];
+                dataGridView2.CurrentRow.Cells[3].Selected = true;
+                dataGridView2.BeginEdit(true);
+                //dataGridView2_CellClick(null, new DataGridViewCellEventArgs(3, rowindex));
+
             }
-            object cell = dataGridView2.CurrentRow.Cells[3];
-            dataGridView2.CurrentRow.Cells[3].Selected = true;
-            dataGridView2_CellClick(null, new DataGridViewCellEventArgs(3, rowindex));
-           
+            catch (FormatException)
+            {
+                MessageBox.Show("숫자를 입력해주세요");
+                return;
+            }
+            
         }
         
         private void button3_Click(object sender, EventArgs e)
@@ -284,6 +377,8 @@ namespace PosProject0._1
             }
         }
 
+   
+
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -293,6 +388,21 @@ namespace PosProject0._1
 
             for (int i = 0; i < dataGridView2.RowCount; i++)
             {
+                //if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == Convert.ToChar(Keys.Enter)))
+                //{
+                //    e.Handled = true;
+                //    MessageBox.Show("숫자만입력해주세요");
+                //}
+                //if (int.Parse(textBox6.Text) > 100)
+                //{
+                //    MessageBox.Show("숫자가 너무 큽니다.");
+                //    textBox6.Text = "0";
+                //}
+                if (int.Parse(dataGridView2.Rows[i].Cells[3].Value.ToString()) < 0)
+                {
+                    MessageBox.Show("수량은 (-)가 될수 없습니다.");
+                    return;
+                }
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
                 {
                     con.Open();
