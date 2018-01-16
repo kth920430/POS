@@ -42,7 +42,7 @@ namespace PosProject0._1
             InitializeComponent();
         }
         frmEmp emp = new frmEmp();
-        
+        frmProducts pro = new frmProducts();
         private void 회원ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             emp.MdiParent = this;
@@ -60,6 +60,19 @@ namespace PosProject0._1
         {
             frmPrefer pre = new frmPrefer();
             pre.ShowDialog();
+        }
+
+        private void 품목관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pro.MdiParent = this;
+            pro.Dock = DockStyle.Fill;
+
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            pro.Show();
         }
     }
 }
