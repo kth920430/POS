@@ -228,6 +228,7 @@ namespace PosProject0._1
                 return;
             }
         }//직원추가
+
         private void btnDel_Click(object sender, EventArgs e)
         {
             using (var con = new Connector().getInstance())

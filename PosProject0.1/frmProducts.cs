@@ -49,13 +49,14 @@ namespace PosProject0._1
                     adapter.Fill(ds);
                     dataGridView1.DataSource = ds.Tables[0];
                     #region ProView
-                    dataGridView1.Columns[0].HeaderText = "바코드";
-                    dataGridView1.Columns[1].HeaderText = "상품명";
-                    dataGridView1.Columns[2].HeaderText = "상품가격";
-                    dataGridView1.Columns[3].HeaderText = "구매비용";
-                    dataGridView1.Columns[4].HeaderText = "종류";
-                    dataGridView1.Columns[5].HeaderText = "이벤트";
-                    dataGridView1.Columns[6].HeaderText = "공급회사";
+                    dataGridView1.Columns[0].HeaderText = "번호";
+                    dataGridView1.Columns[1].HeaderText = "바코드";
+                    dataGridView1.Columns[2].HeaderText = "상품명";
+                    dataGridView1.Columns[3].HeaderText = "가격";
+                    dataGridView1.Columns[4].HeaderText = "구매비용";
+                    dataGridView1.Columns[5].HeaderText = "종류";
+                    dataGridView1.Columns[6].HeaderText = "이벤트";
+                    dataGridView1.Columns[7].HeaderText = "공급회사";
                     dataGridView1.Columns[0].Width = 100;
                     dataGridView1.Columns[1].Width = 140;
                     dataGridView1.Columns[2].Width = 180;
@@ -104,8 +105,8 @@ namespace PosProject0._1
             ProductLoad();
             //clsVirtualKB.Open();
             //종류 이벤트 공급업체 아이템 추가
-            this.dataGridView1.Columns["ProNum"].Visible = false;
-            cboxCat.Items.Add("술");
+           
+                cboxCat.Items.Add("술");
                 cboxCat.Items.Add("아이스크림");
                 cboxCat.Items.Add("음료");
                 cboxCat.Items.Add("과자");
@@ -113,9 +114,9 @@ namespace PosProject0._1
                 cboxCat.Items.Add("도시락");
                 cboxCat.Items.Add("우유");
                 cboxCat.Items.Add("비닐봉투");
-                cboxEve.Items.Add("일반가");
                 cboxEve.Items.Add("1+1 행사상품");
                 cboxEve.Items.Add("2+1 행사상품");
+                cboxEve.Items.Add("일반 상품");
                 #region 공급업체
                 cboxSup.Items.Add("LOTTE");
                 cboxSup.Items.Add("동서식품");
@@ -137,6 +138,7 @@ namespace PosProject0._1
             cboxCat.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             cboxEve.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             cboxSup.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            #region IMG
             //이미지 할 시
             //using (var con = new Connector().getInstance())
             //{
@@ -169,7 +171,8 @@ namespace PosProject0._1
             //            return;
             //        }
             //    }
-            //}
+            //} 
+            #endregion
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -185,11 +188,6 @@ namespace PosProject0._1
             cmd.Parameters.AddWithValue("@CatName", cboxCat.Text);
             cmd.Parameters.AddWithValue("@EveName", cboxEve.Text);
             cmd.Parameters.AddWithValue("@SupName", cboxSup.Text);
-            //고쳐야함
-            cmd.Parameters.Add("@ProNum");
-            
-      
-            
         }
         private void btnProAdd_Click(object sender, EventArgs e)
         {
@@ -204,12 +202,13 @@ namespace PosProject0._1
                     using (var cmd = new SqlCommand("SaveProduct", con))
                     {
                         Parameter(cmd);
+                        //adapter = new SqlDataAdapter();
                         adapter.InsertCommand = cmd;
                         adapter.Update(ds);
                     }
                     Resets(ds);
-                    Empty();
                 }
+                Empty();
             }
             else
             {
@@ -217,6 +216,30 @@ namespace PosProject0._1
                 Empty();
                 return;
             }
+
+        }
+        private void btnProDel_Click(object sender, EventArgs e)
+        {
+            using (var con = new Connector().getInstance())
+            {
+                using (var cmd = new SqlCommand("ProductDelete", con))
+                {
+                    //실행할 쿼리문이 저장프로시저에 있다.
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //저장프로시저 실행에 필요한 파라메터를 지정
+                    cmd.Parameters.AddWithValue("@Barcode", tboxBarcode.Text);
+                    adapter.DeleteCommand = con.CreateCommand();
+                    adapter.DeleteCommand = cmd;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                }
+                Resets(ds);
+            }
+            Empty();
+        }
+
+        private void btnProModi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

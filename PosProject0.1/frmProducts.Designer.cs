@@ -32,6 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnProDel = new System.Windows.Forms.Button();
             this.btnProModi = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnReset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -119,10 +119,21 @@
             this.tabPage2.Text = "품목추가";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReset.Location = new System.Drawing.Point(808, 527);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(187, 147);
+            this.btnReset.TabIndex = 21;
+            this.btnReset.Text = "새로고침";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // btnCancle
             // 
             this.btnCancle.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancle.Location = new System.Drawing.Point(673, 527);
+            this.btnCancle.Location = new System.Drawing.Point(615, 527);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(187, 147);
             this.btnCancle.TabIndex = 20;
@@ -133,27 +144,29 @@
             // btnProDel
             // 
             this.btnProDel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProDel.Location = new System.Drawing.Point(480, 527);
+            this.btnProDel.Location = new System.Drawing.Point(229, 527);
             this.btnProDel.Name = "btnProDel";
             this.btnProDel.Size = new System.Drawing.Size(187, 147);
             this.btnProDel.TabIndex = 19;
             this.btnProDel.Text = "삭제";
             this.btnProDel.UseVisualStyleBackColor = true;
+            this.btnProDel.Click += new System.EventHandler(this.btnProDel_Click);
             // 
             // btnProModi
             // 
             this.btnProModi.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProModi.Location = new System.Drawing.Point(287, 527);
+            this.btnProModi.Location = new System.Drawing.Point(422, 527);
             this.btnProModi.Name = "btnProModi";
             this.btnProModi.Size = new System.Drawing.Size(187, 147);
             this.btnProModi.TabIndex = 18;
             this.btnProModi.Text = "수정";
             this.btnProModi.UseVisualStyleBackColor = true;
+            this.btnProModi.Click += new System.EventHandler(this.btnProModi_Click);
             // 
             // btnProAdd
             // 
             this.btnProAdd.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProAdd.Location = new System.Drawing.Point(94, 527);
+            this.btnProAdd.Location = new System.Drawing.Point(36, 527);
             this.btnProAdd.Name = "btnProAdd";
             this.btnProAdd.Size = new System.Drawing.Size(187, 147);
             this.btnProAdd.TabIndex = 17;
@@ -188,7 +201,7 @@
             // tboxPurchase
             // 
             this.tboxPurchase.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxPurchase.Location = new System.Drawing.Point(201, 267);
+            this.tboxPurchase.Location = new System.Drawing.Point(201, 207);
             this.tboxPurchase.Multiline = true;
             this.tboxPurchase.Name = "tboxPurchase";
             this.tboxPurchase.Size = new System.Drawing.Size(354, 37);
@@ -197,7 +210,7 @@
             // tboxProprice
             // 
             this.tboxProprice.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxProprice.Location = new System.Drawing.Point(201, 207);
+            this.tboxProprice.Location = new System.Drawing.Point(201, 147);
             this.tboxProprice.Multiline = true;
             this.tboxProprice.Name = "tboxProprice";
             this.tboxProprice.Size = new System.Drawing.Size(354, 37);
@@ -206,7 +219,7 @@
             // tboxProName
             // 
             this.tboxProName.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxProName.Location = new System.Drawing.Point(201, 149);
+            this.tboxProName.Location = new System.Drawing.Point(201, 89);
             this.tboxProName.Multiline = true;
             this.tboxProName.Name = "tboxProName";
             this.tboxProName.Size = new System.Drawing.Size(354, 37);
@@ -215,7 +228,7 @@
             // tboxBarcode
             // 
             this.tboxBarcode.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxBarcode.Location = new System.Drawing.Point(201, 94);
+            this.tboxBarcode.Location = new System.Drawing.Point(201, 34);
             this.tboxBarcode.Multiline = true;
             this.tboxBarcode.Name = "tboxBarcode";
             this.tboxBarcode.Size = new System.Drawing.Size(354, 37);
@@ -235,7 +248,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(29, 267);
+            this.label7.Location = new System.Drawing.Point(29, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 37);
             this.label7.TabIndex = 7;
@@ -245,7 +258,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(39, 207);
+            this.label6.Location = new System.Drawing.Point(39, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 37);
             this.label6.TabIndex = 6;
@@ -255,7 +268,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(29, 149);
+            this.label5.Location = new System.Drawing.Point(29, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 37);
             this.label5.TabIndex = 5;
@@ -265,7 +278,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(29, 94);
+            this.label4.Location = new System.Drawing.Point(29, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 37);
             this.label4.TabIndex = 4;
@@ -294,17 +307,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReset.Location = new System.Drawing.Point(866, 527);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(187, 147);
-            this.btnReset.TabIndex = 21;
-            this.btnReset.Text = "새로고침";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmProducts
             // 
