@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Collections.Specialized;
+using System.IO;
 
 namespace PosProject0._1
 {
@@ -335,16 +338,9 @@ namespace PosProject0._1
 
             Form2 f2 = new Form2(dt2);
             f2.Owner = this;
-            f2.ShowDialog();
-           
-            
+            f2.ShowDialog();  
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            tcInven1.SelectedTab = tcInven1.TabPages[1];
-        }
+        }  
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -377,7 +373,19 @@ namespace PosProject0._1
             }
         }
 
-   
+        private void dataGridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == Convert.ToChar(Keys.Enter)))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("숫자만입력해주세요");
+                    return;
+                } 
+            }
+            
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
