@@ -1,6 +1,6 @@
 ﻿namespace PosProject0._1
 {
-    partial class Form2
+    partial class frmInvenCnt
     {
         /// <summary>
         /// Required designer variable.

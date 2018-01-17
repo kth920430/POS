@@ -336,7 +336,7 @@ namespace PosProject0._1
             }
            
 
-            Form2 f2 = new Form2(dt2);
+            frmInvenCnt f2 = new frmInvenCnt(dt2);
             f2.Owner = this;
             f2.ShowDialog();  
 

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace PosProject0._1
 {
-    public partial class Form2 : Form
+    public partial class frmInvenCnt : Form
     {
         DataTable orderitem;
-        public Form2()
+        public frmInvenCnt()
         {
             InitializeComponent();
         }
-        public Form2(DataTable dt) : this()
+        public frmInvenCnt(DataTable dt) : this()
         {
           
             orderitem = dt;
