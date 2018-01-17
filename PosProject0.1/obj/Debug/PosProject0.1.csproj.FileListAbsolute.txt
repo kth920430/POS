@@ -8,6 +8,7 @@ C:\Users\gd3-3\source\repos\PosProject0.1\PosProject0.1\obj\Debug\PosProject0.1.
 C:\Users\gd3-3\source\repos\PosProject0.1\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
 C:\Users\gd3-3\source\repos\PosProject0.1\PosProject0.1\obj\Debug\PosProject0.1.exe
 C:\Users\gd3-3\source\repos\PosProject0.1\PosProject0.1\obj\Debug\PosProject0.1.pdb
+<<<<<<< HEAD
 C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.exe.config
 C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.exe
 C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.pdb
@@ -47,3 +48,16 @@ C:\Users\gd3-3\Desktop\backup\pos\PosProject0.1\bin\Debug\PosProject0.1.pdb
 C:\Users\gd3-3\Desktop\backup\pos\PosProject0.1\obj\Debug\PosProject0._1.Properties.Resources.resources
 C:\Users\gd3-3\Desktop\backup\pos\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
 C:\Users\gd3-3\Desktop\backup\pos\PosProject0.1\obj\Debug\PosProject0._1.SalesStatus.resources
+=======
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\bin\Debug\PosProject0.1.exe.config
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\bin\Debug\PosProject0.1.exe
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\bin\Debug\PosProject0.1.pdb
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0.1.csprojResolveAssemblyReference.cache
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0._1.Form1.resources
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0._1.frmInventory.resources
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0._1.Properties.Resources.resources
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0.1.csproj.GenerateResource.Cache
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0.1.exe
+C:\Users\gd3-9\Desktop\POS\PosProject0.1\obj\Debug\PosProject0.1.pdb
+>>>>>>> 6e2203f0ad62d8e2801dc8f0577a9a95b2170ffe

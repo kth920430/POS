@@ -12,9 +12,13 @@ namespace PosProject0._1
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         frmCheckIn fck = new frmCheckIn();
         frmSalesManager fsm;
         SalesStatus statusSale;
+=======
+        frmInventory fI = new frmInventory();
+>>>>>>> 6e2203f0ad62d8e2801dc8f0577a9a95b2170ffe
         public Form1()
         {
             InitializeComponent();
