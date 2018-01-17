@@ -32,12 +32,12 @@
             this.판매등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품목관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자료관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalesMan = new System.Windows.Forms.ToolStripMenuItem();
             this.환경설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.인쇄설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.회원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.잠깐외출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.출근ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCheckIn = new System.Windows.Forms.ToolStripMenuItem();
             this.dateyymmdd = new System.Windows.Forms.Label();
             this.dateTime = new System.Windows.Forms.Label();
             this.btnMaster = new System.Windows.Forms.Button();
@@ -58,12 +58,12 @@
             this.판매등록ToolStripMenuItem,
             this.현황ToolStripMenuItem,
             this.품목관리ToolStripMenuItem,
-            this.자료관리ToolStripMenuItem,
+            this.btnSalesMan,
             this.환경설정ToolStripMenuItem,
             this.인쇄설정ToolStripMenuItem,
             this.회원ToolStripMenuItem,
             this.잠깐외출ToolStripMenuItem,
-            this.출근ToolStripMenuItem});
+            this.btnCheckIn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 109);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(150, 0, 150, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -93,12 +93,13 @@
             this.품목관리ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.품목관리ToolStripMenuItem.Text = "품목관리";
             // 
-            // 자료관리ToolStripMenuItem
+            // btnSalesMan
             // 
-            this.자료관리ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10);
-            this.자료관리ToolStripMenuItem.Name = "자료관리ToolStripMenuItem";
-            this.자료관리ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
-            this.자료관리ToolStripMenuItem.Text = "매출관리";
+            this.btnSalesMan.Margin = new System.Windows.Forms.Padding(10);
+            this.btnSalesMan.Name = "btnSalesMan";
+            this.btnSalesMan.Size = new System.Drawing.Size(144, 44);
+            this.btnSalesMan.Text = "매출관리";
+            this.btnSalesMan.Click += new System.EventHandler(this.btnSalesMan_Click);
             // 
             // 환경설정ToolStripMenuItem
             // 
@@ -128,17 +129,18 @@
             this.잠깐외출ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.잠깐외출ToolStripMenuItem.Text = "잠깐외출";
             // 
-            // 출근ToolStripMenuItem
+            // btnCheckIn
             // 
-            this.출근ToolStripMenuItem.Name = "출근ToolStripMenuItem";
-            this.출근ToolStripMenuItem.Size = new System.Drawing.Size(164, 44);
-            this.출근ToolStripMenuItem.Text = "출     근";
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(164, 44);
+            this.btnCheckIn.Text = "출     근";
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // dateyymmdd
             // 
             this.dateyymmdd.AutoSize = true;
             this.dateyymmdd.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateyymmdd.Location = new System.Drawing.Point(64, 20);
+            this.dateyymmdd.Location = new System.Drawing.Point(63, 20);
             this.dateyymmdd.Name = "dateyymmdd";
             this.dateyymmdd.Size = new System.Drawing.Size(168, 27);
             this.dateyymmdd.TabIndex = 1;
@@ -148,7 +150,7 @@
             // 
             this.dateTime.AutoSize = true;
             this.dateTime.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTime.Location = new System.Drawing.Point(64, 60);
+            this.dateTime.Location = new System.Drawing.Point(63, 60);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(146, 27);
             this.dateTime.TabIndex = 2;
@@ -156,7 +158,7 @@
             // 
             // btnMaster
             // 
-            this.btnMaster.Location = new System.Drawing.Point(1077, 23);
+            this.btnMaster.Location = new System.Drawing.Point(1075, 23);
             this.btnMaster.Name = "btnMaster";
             this.btnMaster.Size = new System.Drawing.Size(63, 34);
             this.btnMaster.TabIndex = 5;
@@ -165,7 +167,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1013, 23);
+            this.button2.Location = new System.Drawing.Point(1011, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 34);
             this.button2.TabIndex = 6;
@@ -174,7 +176,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1146, 23);
+            this.button3.Location = new System.Drawing.Point(1144, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 34);
             this.button3.TabIndex = 7;
@@ -190,7 +192,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel1.Controls.Add(this.dateyymmdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTime, 1, 2);
@@ -213,8 +215,10 @@
             this.ClientSize = new System.Drawing.Size(1229, 674);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -234,12 +238,12 @@
         private System.Windows.Forms.ToolStripMenuItem 판매등록ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 품목관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 자료관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnSalesMan;
         private System.Windows.Forms.ToolStripMenuItem 환경설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 인쇄설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 회원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 잠깐외출ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 출근ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnCheckIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
