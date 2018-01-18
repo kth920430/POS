@@ -16,17 +16,17 @@ namespace PosProject0._1
         {
             InitializeComponent();
         }
-
-        private void frmSalesManager_Load(object sender, EventArgs e)
-        {
-            
-        }
-        public frmSalesManager(SalesStatus f1):this()
+        public frmSalesManager(SalesStatus f1) : this()
         {
             this.status = f1;
         }
+
         private void btnSalesStatus_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
             status.Show();
         }
     }

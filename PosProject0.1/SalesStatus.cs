@@ -18,11 +18,16 @@ namespace PosProject0._1
             InitializeComponent();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SalesStatus_Load(object sender, EventArgs e)
         {
             LoadGridView("SaleStatusDD");
         }
-        
+
         private void LoadGridView(string querry)
         {
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))

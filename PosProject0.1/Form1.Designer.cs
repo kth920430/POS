@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.판매등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,8 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 10);
@@ -107,6 +110,7 @@
             this.환경설정ToolStripMenuItem.Name = "환경설정ToolStripMenuItem";
             this.환경설정ToolStripMenuItem.Size = new System.Drawing.Size(144, 44);
             this.환경설정ToolStripMenuItem.Text = "재고,발주";
+            this.환경설정ToolStripMenuItem.Click += new System.EventHandler(this.환경설정ToolStripMenuItem_Click);
             // 
             // 인쇄설정ToolStripMenuItem
             // 
@@ -158,7 +162,7 @@
             // 
             // btnMaster
             // 
-            this.btnMaster.Location = new System.Drawing.Point(1075, 23);
+            this.btnMaster.Location = new System.Drawing.Point(1072, 23);
             this.btnMaster.Name = "btnMaster";
             this.btnMaster.Size = new System.Drawing.Size(63, 34);
             this.btnMaster.TabIndex = 5;
@@ -167,7 +171,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1011, 23);
+            this.button2.Location = new System.Drawing.Point(1008, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 34);
             this.button2.TabIndex = 6;
@@ -176,7 +180,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1144, 23);
+            this.button3.Location = new System.Drawing.Point(1141, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 34);
             this.button3.TabIndex = 7;
@@ -192,7 +196,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.Controls.Add(this.dateyymmdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTime, 1, 2);
@@ -217,7 +221,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

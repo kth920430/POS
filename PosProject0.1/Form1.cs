@@ -15,16 +15,30 @@ namespace PosProject0._1
         frmCheckIn fck = new frmCheckIn();
         frmSalesManager fsm;
         SalesStatus statusSale;
+        frmInventory fI = new frmInventory();
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void 환경설정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fI.MdiParent = this;
+            fI.Dock = DockStyle.Fill;
+
+            for (int i = 0; i < MdiChildren.Length; i++)
+            {
+                MdiChildren[i].Hide();
+            }
+
+            fI.Show();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             fck.MdiParent = this;
-            fck.Dock = DockStyle.Fill;          
-            fck.Show();           
+            fck.Dock = DockStyle.Fill;
+            fck.Show();
         }
 
         private void btnSalesMan_Click(object sender, EventArgs e)

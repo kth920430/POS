@@ -30,6 +30,7 @@ namespace PosProject0._1
 
         private void frmCheckIn_Load(object sender, EventArgs e)
         {
+            
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["posproject"].ConnectionString))
             {
                 con.Open();
@@ -124,18 +125,28 @@ namespace PosProject0._1
         //엔터버튼 클릭시
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            int loginNum = int.Parse(txtEmpId.Text);
-            DateTime chkDate = DateTime.Now;
-            for (int i = 0; i < employees.Count; i++)
+            try
             {
-                if (loginNum == employees[i].EmpId)
+                int loginNum = int.Parse(txtEmpId.Text);
+                DateTime chkDate = DateTime.Now;
+                for (int i = 0; i < employees.Count; i++)
                 {
-                    CheckLogin(1, loginNum, chkDate);
-                }              
+                    if (loginNum == employees[i].EmpId)
+                    {
+                        CheckLogin(1, loginNum, chkDate);
+                    }
+                }
+
+                txtEmpId.Text = null;
+                txtEmpId.Focus();
             }
-       
-            txtEmpId.Text = null;
-            txtEmpId.Focus();
+            catch (FormatException)
+            {
+                txtEmpId.Text = "";
+                txtEmpId.Focus();
+                MessageBox.Show("숫자를 입력해주세요.");
+                return;
+            }
         }
 
         //로그인 여부 체크
@@ -304,5 +315,7 @@ namespace PosProject0._1
             Commute cmu = new Commute();
             cmu.Show();
         }
+
+        
     }
 }

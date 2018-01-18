@@ -28,66 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalesPayment = new System.Windows.Forms.Button();
-            this.btnSalesProducts = new System.Windows.Forms.Button();
-            this.btnSalesDate = new System.Windows.Forms.Button();
-            this.btnSalesStatus = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSalesDate = new System.Windows.Forms.Button();
+            this.btnSalesProducts = new System.Windows.Forms.Button();
+            this.btnSalesPayment = new System.Windows.Forms.Button();
+            this.btnSalesStatus = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnSalesPayment
-            // 
-            this.btnSalesPayment.BackgroundImage = global::PosProject0._1.Properties.Resources.payment;
-            this.btnSalesPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalesPayment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalesPayment.FlatAppearance.BorderSize = 0;
-            this.btnSalesPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesPayment.Location = new System.Drawing.Point(456, 284);
-            this.btnSalesPayment.Name = "btnSalesPayment";
-            this.btnSalesPayment.Size = new System.Drawing.Size(167, 163);
-            this.btnSalesPayment.TabIndex = 3;
-            this.btnSalesPayment.UseVisualStyleBackColor = true;
-            // 
-            // btnSalesProducts
-            // 
-            this.btnSalesProducts.BackgroundImage = global::PosProject0._1.Properties.Resources.products;
-            this.btnSalesProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalesProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalesProducts.FlatAppearance.BorderSize = 0;
-            this.btnSalesProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesProducts.Location = new System.Drawing.Point(201, 284);
-            this.btnSalesProducts.Name = "btnSalesProducts";
-            this.btnSalesProducts.Size = new System.Drawing.Size(167, 163);
-            this.btnSalesProducts.TabIndex = 2;
-            this.btnSalesProducts.UseVisualStyleBackColor = true;
-            // 
-            // btnSalesDate
-            // 
-            this.btnSalesDate.BackgroundImage = global::PosProject0._1.Properties.Resources.date;
-            this.btnSalesDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalesDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalesDate.FlatAppearance.BorderSize = 0;
-            this.btnSalesDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesDate.Location = new System.Drawing.Point(456, 87);
-            this.btnSalesDate.Name = "btnSalesDate";
-            this.btnSalesDate.Size = new System.Drawing.Size(167, 163);
-            this.btnSalesDate.TabIndex = 1;
-            this.btnSalesDate.UseVisualStyleBackColor = true;
-            // 
-            // btnSalesStatus
-            // 
-            this.btnSalesStatus.BackgroundImage = global::PosProject0._1.Properties.Resources.sales;
-            this.btnSalesStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalesStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalesStatus.FlatAppearance.BorderSize = 0;
-            this.btnSalesStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesStatus.Location = new System.Drawing.Point(201, 87);
-            this.btnSalesStatus.Name = "btnSalesStatus";
-            this.btnSalesStatus.Size = new System.Drawing.Size(167, 163);
-            this.btnSalesStatus.TabIndex = 0;
-            this.btnSalesStatus.UseVisualStyleBackColor = true;
-            this.btnSalesStatus.Click += new System.EventHandler(this.btnSalesStatus_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -111,19 +58,67 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(826, 565);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(730, 513);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // btnSalesDate
+            // 
+            this.btnSalesDate.BackgroundImage = global::PosProject0._1.Properties.Resources.date;
+            this.btnSalesDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalesDate.FlatAppearance.BorderSize = 0;
+            this.btnSalesDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesDate.Location = new System.Drawing.Point(404, 79);
+            this.btnSalesDate.Name = "btnSalesDate";
+            this.btnSalesDate.Size = new System.Drawing.Size(147, 147);
+            this.btnSalesDate.TabIndex = 1;
+            this.btnSalesDate.UseVisualStyleBackColor = true;
+            // 
+            // btnSalesProducts
+            // 
+            this.btnSalesProducts.BackgroundImage = global::PosProject0._1.Properties.Resources.products;
+            this.btnSalesProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalesProducts.FlatAppearance.BorderSize = 0;
+            this.btnSalesProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesProducts.Location = new System.Drawing.Point(178, 257);
+            this.btnSalesProducts.Name = "btnSalesProducts";
+            this.btnSalesProducts.Size = new System.Drawing.Size(147, 147);
+            this.btnSalesProducts.TabIndex = 2;
+            this.btnSalesProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnSalesPayment
+            // 
+            this.btnSalesPayment.BackgroundImage = global::PosProject0._1.Properties.Resources.payment;
+            this.btnSalesPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalesPayment.FlatAppearance.BorderSize = 0;
+            this.btnSalesPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesPayment.Location = new System.Drawing.Point(404, 257);
+            this.btnSalesPayment.Name = "btnSalesPayment";
+            this.btnSalesPayment.Size = new System.Drawing.Size(147, 147);
+            this.btnSalesPayment.TabIndex = 3;
+            this.btnSalesPayment.UseVisualStyleBackColor = true;
+            // 
+            // btnSalesStatus
+            // 
+            this.btnSalesStatus.BackgroundImage = global::PosProject0._1.Properties.Resources.sales;
+            this.btnSalesStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalesStatus.FlatAppearance.BorderSize = 0;
+            this.btnSalesStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesStatus.Location = new System.Drawing.Point(178, 79);
+            this.btnSalesStatus.Name = "btnSalesStatus";
+            this.btnSalesStatus.Size = new System.Drawing.Size(147, 147);
+            this.btnSalesStatus.TabIndex = 0;
+            this.btnSalesStatus.UseVisualStyleBackColor = true;
+            this.btnSalesStatus.Click += new System.EventHandler(this.btnSalesStatus_Click);
             // 
             // frmSalesManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 565);
+            this.ClientSize = new System.Drawing.Size(730, 513);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSalesManager";
             this.Text = "frmSalesManager";
-            this.Load += new System.EventHandler(this.frmSalesManager_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -131,10 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalesStatus;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSalesDate;
         private System.Windows.Forms.Button btnSalesProducts;
         private System.Windows.Forms.Button btnSalesPayment;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnSalesStatus;
     }
 }

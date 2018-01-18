@@ -28,34 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.salesStatusGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.salesStatusGrid = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.selectYMD = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.salesStatusGrid)).BeginInit();
+            this.btnBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesStatusGrid)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // salesStatusGrid
-            // 
-            this.salesStatusGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.salesStatusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salesStatusGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salesStatusGrid.Location = new System.Drawing.Point(37, 33);
-            this.salesStatusGrid.Name = "salesStatusGrid";
-            this.salesStatusGrid.RowTemplate.Height = 23;
-            this.salesStatusGrid.Size = new System.Drawing.Size(202, 504);
-            this.salesStatusGrid.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -65,7 +49,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.29603F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.781616F));
             this.tableLayoutPanel1.Controls.Add(this.salesStatusGrid, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.chart1, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
@@ -76,31 +59,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 601);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(628, 548);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // chart1
+            // salesStatusGrid
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(245, 33);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(432, 504);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
+            this.salesStatusGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.salesStatusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salesStatusGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salesStatusGrid.Location = new System.Drawing.Point(33, 30);
+            this.salesStatusGrid.Name = "salesStatusGrid";
+            this.salesStatusGrid.RowTemplate.Height = 23;
+            this.salesStatusGrid.Size = new System.Drawing.Size(177, 459);
+            this.salesStatusGrid.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 543);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 495);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(202, 55);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(177, 50);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -108,27 +85,14 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.43519F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.564815F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnBack, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(245, 543);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(216, 495);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(432, 55);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(378, 50);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::PosProject0._1.Properties.Resources.back;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(398, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 49);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -137,11 +101,11 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.24074F));
             this.tableLayoutPanel3.Controls.Add(this.selectYMD, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(245, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(216, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(432, 24);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(378, 21);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // selectYMD
@@ -154,25 +118,38 @@
             "일매출",
             "월매출",
             "년매출"});
-            this.selectYMD.Location = new System.Drawing.Point(313, 3);
+            this.selectYMD.Location = new System.Drawing.Point(274, 3);
             this.selectYMD.Name = "selectYMD";
-            this.selectYMD.Size = new System.Drawing.Size(116, 20);
+            this.selectYMD.Size = new System.Drawing.Size(101, 20);
             this.selectYMD.TabIndex = 3;
             this.selectYMD.SelectedIndexChanged += new System.EventHandler(this.selectYMD_SelectedIndexChanged);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = global::PosProject0._1.Properties.Resources.back;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(348, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(27, 44);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // SalesStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 601);
+            this.ClientSize = new System.Drawing.Size(628, 548);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalesStatus";
             this.Text = "SalesStatus";
             this.Load += new System.EventHandler(this.SalesStatus_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.salesStatusGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesStatusGrid)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -180,12 +157,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView salesStatusGrid;
+
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataGridView salesStatusGrid;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox selectYMD;
     }
