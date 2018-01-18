@@ -111,7 +111,6 @@ namespace PosProject0._1
             tboxEname.Text = mboxPass.Text = tboxENum.Text = mtboxTel.Text = cboxDept.Text = cboxdate.Text = dateTimePicker1.Text = "";
             tboxEname.Focus();
         }
-
         private void Parameter(SqlCommand cmd)
         {
             cmd.CommandType = CommandType.StoredProcedure;
@@ -201,7 +200,6 @@ namespace PosProject0._1
         {
             Resets(ds);
         }//새로고침 
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (CheckEmp() && EmpId())
@@ -228,7 +226,6 @@ namespace PosProject0._1
                 return;
             }
         }//직원추가
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             using (var con = new Connector().getInstance())
