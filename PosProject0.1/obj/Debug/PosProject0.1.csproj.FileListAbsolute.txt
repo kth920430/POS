@@ -59,3 +59,19 @@ C:\Users\gd3-9\Desktop\1.17 - 복사본\PosProject0.1\bin\Debug\PosProject0.1.ex
 C:\Users\gd3-9\Desktop\1.17 - 복사본\PosProject0.1\bin\Debug\PosProject0.1.pdb
 C:\Users\gd3-9\Desktop\1.17 - 복사본\PosProject0.1\obj\Debug\PosProject0._1.frmSalesManager.resources
 C:\Users\gd3-9\Desktop\1.17 - 복사본\PosProject0.1\obj\Debug\PosProject0._1.SalesStatus.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.exe.config
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.exe
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\bin\Debug\PosProject0.1.pdb
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.csprojResolveAssemblyReference.cache
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.Commute.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.Form1.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.Form2.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.frmCheckIn.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.frmInventory.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.frmSalesManager.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.Properties.Resources.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.SalesStatus.resources
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.csproj.GenerateResource.Cache
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.exe
+C:\Users\gd3-3\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.pdb
