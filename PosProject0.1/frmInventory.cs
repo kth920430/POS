@@ -20,6 +20,7 @@ namespace PosProject0._1
     public partial class frmInventory : Form
     {
         bool is_Check = false;
+        int OrderSearch = 3;
         public frmInventory()
         {
             InitializeComponent();
@@ -385,6 +386,93 @@ namespace PosProject0._1
                 } 
             }
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (!dataGridView1.Rows[i].Cells[OrderSearch].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper().Trim()))
+                {
+                    dataGridView1.Rows[i].Visible = false;
+                }
+                else if (dataGridView1.Rows[i].Cells[OrderSearch].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper().Trim()))
+                {
+                    dataGridView1.Rows[i].Visible = true;
+                }
+                else if (textBox1.Text == null)
+                {
+                    dataGridView1.Rows[i].Visible = true;
+                }
+            }
+            //dataGridView1.CurrentRow.Visible = false;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+            //    if (textBox1.Text != dataGridView1.Rows[i].Cells[1].Value.ToString())
+            //    {
+            //        dataGridView1.Rows[i].Visible = false;
+            //    }
+            //    else if (textBox1.Text == dataGridView1.Rows[i].Cells[1].Value.ToString())
+            //    {
+            //        dataGridView1.Rows[i].Visible = true;
+            //    }
+            //    else if (textBox1.Text == null)
+            //    {
+            //        dataGridView1.Rows[i].Visible = true;
+            //    }
+            //}
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+            //    if (textBox1.Text != dataGridView1.Rows[i].Cells[1].Value.ToString())
+            //    {
+            //        dataGridView1.Rows[i].Visible = false;
+            //    }
+            //    else if (textBox1.Text == dataGridView1.Rows[i].Cells[1].Value.ToString())
+            //    {
+            //        dataGridView1.Rows[i].Visible = true;
+            //    }
+            //    else if (textBox1.Text == "")
+            //    {
+            //        dataGridView1.Rows[i].Visible = true;
+            //    }
+            //}
+        }
+
+        private void textBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        OrderSearch = 3;
+                        break;
+                    }
+                case 1:
+                    {
+                        OrderSearch = 2;
+                        break;
+                    }
+                case 2:
+                    {
+                        OrderSearch = 6;
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
