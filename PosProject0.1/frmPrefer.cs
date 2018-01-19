@@ -37,25 +37,32 @@ namespace PosProject0._1
                     }
                 }
             }
-        }
+        }//폼로드 
         private void btnModi_Click(object sender, EventArgs e)
         {
             using (var con = new Connector().getInstance())
             {
                 using (var cmd = new SqlCommand("UpdateStore",con))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@StoreName",tboxSName.Text);
-                    cmd.Parameters.AddWithValue("@StoreAddr",tboxSAddr.Text);
-                    cmd.Parameters.AddWithValue("@TelePhone",tboxSTel.Text);
-                    cmd.Parameters.AddWithValue("@BusinNum",int.Parse(tboxBNum.Text));
-                    adapter.UpdateCommand = con.CreateCommand();
-                    adapter.UpdateCommand = cmd;
-                    adapter.UpdateCommand.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@StoreName", tboxSName.Text);
+                        cmd.Parameters.AddWithValue("@StoreAddr", tboxSAddr.Text);
+                        cmd.Parameters.AddWithValue("@TelePhone", tboxSTel.Text);
+                        cmd.Parameters.AddWithValue("@BusinNum", int.Parse(tboxBNum.Text));
+                        adapter.UpdateCommand = con.CreateCommand();
+                        adapter.UpdateCommand = cmd;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("사업자번호는 숫자를 입력해주세요","알림",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
                 }
                 this.Close();
             }
-        }
+        }//환경설정 수정//예외처리
         private void btnCancle_Click(object sender, EventArgs e)
         {
             this.Close();

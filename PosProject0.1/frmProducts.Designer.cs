@@ -66,7 +66,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tboxBarcodeSearch = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProductView = new System.Windows.Forms.DataGridView();
+            this.ProductImg = new System.Windows.Forms.PictureBox();
+            this.btnImg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -74,15 +76,16 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImg)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReset.Location = new System.Drawing.Point(3, 429);
+            this.btnReset.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReset.Location = new System.Drawing.Point(3, 412);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(194, 153);
+            this.btnReset.Size = new System.Drawing.Size(190, 139);
             this.btnReset.TabIndex = 21;
             this.btnReset.Text = "새로고침";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -90,10 +93,10 @@
             // 
             // btnCancle
             // 
-            this.btnCancle.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancle.Location = new System.Drawing.Point(3, 588);
+            this.btnCancle.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancle.Location = new System.Drawing.Point(3, 557);
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(187, 138);
+            this.btnCancle.Size = new System.Drawing.Size(190, 140);
             this.btnCancle.TabIndex = 20;
             this.btnCancle.Text = "취소";
             this.btnCancle.UseVisualStyleBackColor = true;
@@ -101,10 +104,10 @@
             // 
             // btnProDel
             // 
-            this.btnProDel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProDel.Location = new System.Drawing.Point(3, 151);
+            this.btnProDel.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProDel.Location = new System.Drawing.Point(3, 143);
             this.btnProDel.Name = "btnProDel";
-            this.btnProDel.Size = new System.Drawing.Size(194, 123);
+            this.btnProDel.Size = new System.Drawing.Size(190, 130);
             this.btnProDel.TabIndex = 19;
             this.btnProDel.Text = "삭제";
             this.btnProDel.UseVisualStyleBackColor = true;
@@ -112,10 +115,10 @@
             // 
             // btnProModi
             // 
-            this.btnProModi.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProModi.Location = new System.Drawing.Point(3, 280);
+            this.btnProModi.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProModi.Location = new System.Drawing.Point(3, 279);
             this.btnProModi.Name = "btnProModi";
-            this.btnProModi.Size = new System.Drawing.Size(194, 143);
+            this.btnProModi.Size = new System.Drawing.Size(190, 127);
             this.btnProModi.TabIndex = 18;
             this.btnProModi.Text = "수정";
             this.btnProModi.UseVisualStyleBackColor = true;
@@ -123,10 +126,10 @@
             // 
             // btnProAdd
             // 
-            this.btnProAdd.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProAdd.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProAdd.Location = new System.Drawing.Point(3, 3);
             this.btnProAdd.Name = "btnProAdd";
-            this.btnProAdd.Size = new System.Drawing.Size(194, 142);
+            this.btnProAdd.Size = new System.Drawing.Size(190, 134);
             this.btnProAdd.TabIndex = 17;
             this.btnProAdd.Text = "저장";
             this.btnProAdd.UseVisualStyleBackColor = true;
@@ -198,70 +201,70 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(10, 328);
+            this.label8.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(3, 328);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 37);
+            this.label8.Size = new System.Drawing.Size(165, 39);
             this.label8.TabIndex = 8;
             this.label8.Text = "공급업체";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(3, 208);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 37);
+            this.label7.Size = new System.Drawing.Size(184, 39);
             this.label7.TabIndex = 7;
             this.label7.Text = "구매 비용";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(3, 149);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 37);
+            this.label6.Size = new System.Drawing.Size(91, 39);
             this.label6.TabIndex = 6;
             this.label6.Text = "가격";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(3, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 37);
+            this.label5.Size = new System.Drawing.Size(128, 39);
             this.label5.TabIndex = 5;
             this.label5.Text = "상품명";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(10, 35);
+            this.label4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(3, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 37);
+            this.label4.Size = new System.Drawing.Size(128, 39);
             this.label4.TabIndex = 4;
             this.label4.Text = "바코드";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(3, 386);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 37);
+            this.label3.Size = new System.Drawing.Size(221, 39);
             this.label3.TabIndex = 3;
             this.label3.Text = "이벤트 선택";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(10, 268);
+            this.label2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(3, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 37);
+            this.label2.Size = new System.Drawing.Size(91, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "종류";
             // 
@@ -285,18 +288,18 @@
             this.panel1.Controls.Add(this.tboxBarcode);
             this.panel1.Controls.Add(this.tboxProprice);
             this.panel1.Controls.Add(this.tboxProName);
-            this.panel1.Location = new System.Drawing.Point(1035, 94);
+            this.panel1.Location = new System.Drawing.Point(1026, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(498, 547);
+            this.panel1.Size = new System.Drawing.Size(514, 431);
             this.panel1.TabIndex = 49;
             // 
             // tboxProSearch
             // 
             this.tboxProSearch.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxProSearch.Location = new System.Drawing.Point(116, 3);
+            this.tboxProSearch.Location = new System.Drawing.Point(127, 3);
             this.tboxProSearch.Multiline = true;
             this.tboxProSearch.Name = "tboxProSearch";
-            this.tboxProSearch.Size = new System.Drawing.Size(319, 37);
+            this.tboxProSearch.Size = new System.Drawing.Size(319, 45);
             this.tboxProSearch.TabIndex = 51;
             this.tboxProSearch.TextChanged += new System.EventHandler(this.tboxProSearch_TextChanged);
             // 
@@ -304,7 +307,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 28);
             this.label1.TabIndex = 52;
@@ -312,7 +316,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.toolStrip1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
@@ -344,56 +348,56 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 9;
+            this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.79909F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.20091F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel1.Controls.Add(this.btnEnd, 8, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cboxCategory, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnExcel, 7, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 338F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tableLayoutPanel1.Controls.Add(this.btnEnd, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tboxProSearch, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnExcel, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.tboxBarcodeSearch, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tboxProSearch, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboxCategory, 5, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.276438F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1739, 45);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1739, 51);
             this.tableLayoutPanel1.TabIndex = 54;
             // 
             // btnEnd
             // 
             this.btnEnd.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEnd.Location = new System.Drawing.Point(1620, 3);
+            this.btnEnd.Location = new System.Drawing.Point(1617, 3);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(115, 39);
+            this.btnEnd.Size = new System.Drawing.Size(115, 45);
             this.btnEnd.TabIndex = 56;
             this.btnEnd.Text = "종료";
             this.btnEnd.UseVisualStyleBackColor = true;
             // 
             // cboxCategory
             // 
-            this.cboxCategory.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboxCategory.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboxCategory.FormattingEnabled = true;
-            this.cboxCategory.Location = new System.Drawing.Point(1034, 3);
+            this.cboxCategory.Location = new System.Drawing.Point(1151, 3);
             this.cboxCategory.Name = "cboxCategory";
-            this.cboxCategory.Size = new System.Drawing.Size(299, 35);
+            this.cboxCategory.Size = new System.Drawing.Size(292, 45);
             this.cboxCategory.TabIndex = 56;
+            this.cboxCategory.TextChanged += new System.EventHandler(this.cboxCategory_TextChanged);
             // 
             // btnExcel
             // 
             this.btnExcel.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcel.Location = new System.Drawing.Point(1466, 3);
+            this.btnExcel.Location = new System.Drawing.Point(1459, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(148, 39);
+            this.btnExcel.Size = new System.Drawing.Size(148, 45);
             this.btnExcel.TabIndex = 55;
             this.btnExcel.Text = "액셀저장";
             this.btnExcel.UseVisualStyleBackColor = true;
@@ -401,16 +405,16 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(441, 3);
+            this.panel4.Location = new System.Drawing.Point(485, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(122, 37);
+            this.panel4.Size = new System.Drawing.Size(169, 45);
             this.panel4.TabIndex = 58;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(16, 5);
+            this.label10.Location = new System.Drawing.Point(37, 11);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 28);
             this.label10.TabIndex = 56;
@@ -421,22 +425,22 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 37);
+            this.panel2.Size = new System.Drawing.Size(118, 45);
             this.panel2.TabIndex = 55;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(903, 3);
+            this.panel3.Location = new System.Drawing.Point(998, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(113, 39);
+            this.panel3.Size = new System.Drawing.Size(147, 45);
             this.panel3.TabIndex = 57;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(10, 5);
+            this.label9.Location = new System.Drawing.Point(23, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 28);
             this.label9.TabIndex = 55;
@@ -445,49 +449,75 @@
             // tboxBarcodeSearch
             // 
             this.tboxBarcodeSearch.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxBarcodeSearch.Location = new System.Drawing.Point(569, 3);
+            this.tboxBarcodeSearch.Location = new System.Drawing.Point(660, 3);
             this.tboxBarcodeSearch.Multiline = true;
             this.tboxBarcodeSearch.Name = "tboxBarcodeSearch";
-            this.tboxBarcodeSearch.Size = new System.Drawing.Size(327, 37);
+            this.tboxBarcodeSearch.Size = new System.Drawing.Size(327, 45);
             this.tboxBarcodeSearch.TabIndex = 59;
+            this.tboxBarcodeSearch.TextChanged += new System.EventHandler(this.tboxBarcodeSearch_TextChanged);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.btnCancle, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.btnProDel, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnReset, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.btnProModi, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.btnProAdd, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1539, 94);
+            this.tableLayoutPanel3.Controls.Add(this.btnCancle, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.btnImg, 0, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1543, 94);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.36134F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.63866F));
+            this.tableLayoutPanel3.RowCount = 6;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.72464F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.27536F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 143F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 729);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(196, 850);
             this.tableLayoutPanel3.TabIndex = 56;
             // 
-            // dataGridView1
+            // ProductView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1029, 717);
-            this.dataGridView1.TabIndex = 57;
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            this.ProductView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductView.Location = new System.Drawing.Point(0, 94);
+            this.ProductView.Name = "ProductView";
+            this.ProductView.RowTemplate.Height = 23;
+            this.ProductView.Size = new System.Drawing.Size(1029, 850);
+            this.ProductView.TabIndex = 57;
+            this.ProductView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductView_CellClick);
+            this.ProductView.Click += new System.EventHandler(this.ProductView_Click);
+            // 
+            // ProductImg
+            // 
+            this.ProductImg.Location = new System.Drawing.Point(1033, 532);
+            this.ProductImg.Name = "ProductImg";
+            this.ProductImg.Size = new System.Drawing.Size(504, 400);
+            this.ProductImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImg.TabIndex = 58;
+            this.ProductImg.TabStop = false;
+            // 
+            // btnImg
+            // 
+            this.btnImg.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnImg.Location = new System.Drawing.Point(3, 703);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(190, 141);
+            this.btnImg.TabIndex = 59;
+            this.btnImg.Text = "사진추가";
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1739, 925);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ProductImg);
+            this.Controls.Add(this.ProductView);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
@@ -509,7 +539,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,6 +585,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProductView;
+        private System.Windows.Forms.PictureBox ProductImg;
+        private System.Windows.Forms.Button btnImg;
     }
 }

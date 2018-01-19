@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.tboxSerach = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
@@ -55,16 +53,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tboxEname = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnModified = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnSerch = new System.Windows.Forms.Button();
+            this.EmpImg = new System.Windows.Forms.PictureBox();
+            this.btnEmpModi = new System.Windows.Forms.Button();
+            this.btnEmpDel = new System.Windows.Forms.Button();
+            this.btnEmpSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EmpView = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
@@ -94,29 +92,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(1539, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 60);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "정산";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(25, 107);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 48);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "성명";
             // 
             // tboxSerach
             // 
@@ -126,6 +104,7 @@
             this.tboxSerach.Name = "tboxSerach";
             this.tboxSerach.Size = new System.Drawing.Size(264, 82);
             this.tboxSerach.TabIndex = 29;
+            this.tboxSerach.TextChanged += new System.EventHandler(this.tboxSerach_TextChanged);
             // 
             // groupBox1
             // 
@@ -428,59 +407,48 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // pictureBox1
+            // EmpImg
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 189);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 292);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.EmpImg.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.EmpImg.Location = new System.Drawing.Point(91, 189);
+            this.EmpImg.Name = "EmpImg";
+            this.EmpImg.Size = new System.Drawing.Size(264, 292);
+            this.EmpImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.EmpImg.TabIndex = 17;
+            this.EmpImg.TabStop = false;
             // 
-            // btnModified
+            // btnEmpModi
             // 
-            this.btnModified.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnModified.Location = new System.Drawing.Point(1258, 14);
-            this.btnModified.Name = "btnModified";
-            this.btnModified.Size = new System.Drawing.Size(87, 60);
-            this.btnModified.TabIndex = 26;
-            this.btnModified.Text = "수정";
-            this.btnModified.UseVisualStyleBackColor = true;
-            this.btnModified.Click += new System.EventHandler(this.btnModified_Click);
+            this.btnEmpModi.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmpModi.Location = new System.Drawing.Point(1258, 14);
+            this.btnEmpModi.Name = "btnEmpModi";
+            this.btnEmpModi.Size = new System.Drawing.Size(87, 60);
+            this.btnEmpModi.TabIndex = 26;
+            this.btnEmpModi.Text = "수정";
+            this.btnEmpModi.UseVisualStyleBackColor = true;
+            this.btnEmpModi.Click += new System.EventHandler(this.btnEmpModi_Click);
             // 
-            // btnDel
+            // btnEmpDel
             // 
-            this.btnDel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDel.Location = new System.Drawing.Point(1353, 14);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(87, 60);
-            this.btnDel.TabIndex = 25;
-            this.btnDel.Text = "삭제";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.btnEmpDel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmpDel.Location = new System.Drawing.Point(1353, 14);
+            this.btnEmpDel.Name = "btnEmpDel";
+            this.btnEmpDel.Size = new System.Drawing.Size(87, 60);
+            this.btnEmpDel.TabIndex = 25;
+            this.btnEmpDel.Text = "삭제";
+            this.btnEmpDel.UseVisualStyleBackColor = true;
+            this.btnEmpDel.Click += new System.EventHandler(this.btnEmpDel_Click);
             // 
-            // btnSave
+            // btnEmpSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1165, 14);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(87, 60);
-            this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnSerch
-            // 
-            this.btnSerch.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSerch.Location = new System.Drawing.Point(402, 78);
-            this.btnSerch.Name = "btnSerch";
-            this.btnSerch.Size = new System.Drawing.Size(130, 82);
-            this.btnSerch.TabIndex = 23;
-            this.btnSerch.Text = "조회";
-            this.btnSerch.UseVisualStyleBackColor = true;
-            this.btnSerch.Click += new System.EventHandler(this.btnSerch_Click);
+            this.btnEmpSave.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmpSave.Location = new System.Drawing.Point(1165, 14);
+            this.btnEmpSave.Name = "btnEmpSave";
+            this.btnEmpSave.Size = new System.Drawing.Size(87, 60);
+            this.btnEmpSave.TabIndex = 24;
+            this.btnEmpSave.Text = "저장";
+            this.btnEmpSave.UseVisualStyleBackColor = true;
+            this.btnEmpSave.Click += new System.EventHandler(this.btnEmpSave_Click);
             // 
             // label1
             // 
@@ -519,34 +487,43 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // dataGridView1
+            // EmpView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(533, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1188, 211);
-            this.dataGridView1.TabIndex = 35;
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            this.EmpView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmpView.Location = new System.Drawing.Point(533, 78);
+            this.EmpView.Name = "EmpView";
+            this.EmpView.RowTemplate.Height = 23;
+            this.EmpView.Size = new System.Drawing.Size(1188, 211);
+            this.EmpView.TabIndex = 35;
+            this.EmpView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpView_CellClick);
+            this.EmpView.Click += new System.EventHandler(this.EmpView_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(25, 107);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 48);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "성명";
             // 
             // frmEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1723, 916);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.EmpView);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnCancle);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.EmpImg);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tboxSerach);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnModified);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnSerch);
+            this.Controls.Add(this.btnEmpModi);
+            this.Controls.Add(this.btnEmpDel);
+            this.Controls.Add(this.btnEmpSave);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmp";
@@ -593,24 +570,21 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tboxSerach;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboxdate;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox EmpImg;
         private System.Windows.Forms.SplitContainer splitContainer9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox mtboxTel;
@@ -626,10 +600,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tboxEname;
-        private System.Windows.Forms.Button btnModified;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSerch;
+        private System.Windows.Forms.Button btnEmpModi;
+        private System.Windows.Forms.Button btnEmpDel;
+        private System.Windows.Forms.Button btnEmpSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnCancle;
@@ -637,7 +610,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox mboxPass;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView EmpView;
         private System.Windows.Forms.Label lbldate;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -21,33 +21,6 @@ namespace PosProject0._1
         {
             InitializeComponent();
         }
-        private bool EmpId()
-        {
-            string empId = tboxENum.Text;
-            using (var con = new Connector().getInstance())
-            {
-                using (var cmd = new SqlCommand("CheckEmp", con))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    //저장프로시저 실행에 필요한 파라메터를 지정
-                    cmd.Parameters.AddWithValue("@EmpId", empId);
-                    var sdr = cmd.ExecuteReader();
-                    if (sdr.HasRows)
-                    {
-                        MessageBox.Show("중복되는 사원이 있습니다.","알림",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        Empty();
-                        sdr.Close();
-                        con.Close();
-                        return false;
-                    }
-                    else
-                    {
-                        sdr.Close();
-                        return true;
-                    }
-                }
-            }
-        }//직원 아이디 중복
         private bool CheckEmp()
         {
              if (tboxEname.Text == "" || tboxENum.Text == "" || mtboxTel.Text == "" || cboxDept.Text == "" || cboxdate.Text == "" || dateTimePicker1.Text == "")
@@ -59,75 +32,119 @@ namespace PosProject0._1
                     return true;
                 }
         }//모두 작성
+        private bool EmpId()
+        {
+            using (var con = new Connector().getInstance())
+            {
+                using (var cmd = new SqlCommand("CheckEmp", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@EmpId",tboxENum.Text);
+                        var sdr = cmd.ExecuteReader();
+                        if (sdr.HasRows)
+                        {
+                            MessageBox.Show("중복되는 사원이 있습니다.","알림",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            Empty();
+                            sdr.Close();
+                            con.Close();
+                            return false;
+                        }
+                        else
+                        {
+                            sdr.Close();
+                            return true;
+                        }
+                    }
+                    catch (SqlException)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }//직원 아이디 중복
         private void EmpLoad()
         {
+            EmpView.AllowUserToAddRows = false;
             using (var con = new Connector().getInstance())
             {
                 using (var cmd = new SqlCommand("EmployeesLoad", con))
                 {
-                    adapter = new SqlDataAdapter();
-                    adapter.SelectCommand = cmd;
-                    ds = new DataSet();
-                    adapter.Fill(ds);
-                    dataGridView1.DataSource = ds.Tables[0];
+                    try
+                    {
+                        adapter = new SqlDataAdapter();
+                        adapter.SelectCommand = cmd;
+                        ds = new DataSet();
+                        adapter.Fill(ds);
+                        EmpView.DataSource = ds.Tables[0];
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
                     cboxdate.Items.Clear();
                     cboxdate.Items.Add(0);
                     #region EmpView
-                    this.dataGridView1.Columns["EmpPwd"].Visible = false;
-                    this.dataGridView1.Columns["EmpImg"].Visible = false;
-                    this.dataGridView1.Columns["GradeNum"].Visible = false;
-                    this.dataGridView1.Columns["GradeNum1"].Visible = false;
-                    dataGridView1.Columns[0].HeaderText = "사원번호";
-                    dataGridView1.Columns[1].HeaderText = "사원명";
-                    dataGridView1.Columns[2].HeaderText = "비밀번호";
-                    dataGridView1.Columns[3].HeaderText = "사진";
-                    dataGridView1.Columns[4].HeaderText = "근무시간";
-                    dataGridView1.Columns[5].HeaderText = "전화번호";
-                    dataGridView1.Columns[6].HeaderText = "입사일";
-                    dataGridView1.Columns[7].HeaderText = "";
-                    dataGridView1.Columns[8].HeaderText = "";
-                    dataGridView1.Columns[9].HeaderText = "직급";
-                    dataGridView1.Columns[10].HeaderText = "시급";
-                    dataGridView1.Columns[0].Width = 150;
-                    dataGridView1.Columns[1].Width = 160;
-                    dataGridView1.Columns[2].Width = 160;
-                    dataGridView1.Columns[3].Width = 160;
-                    dataGridView1.Columns[4].Width = 150;
-                    dataGridView1.Columns[5].Width = 150;
-                    dataGridView1.Columns[6].Width = 150;
-                    dataGridView1.Columns[7].Width = 150;
+                    this.EmpView.Columns["EmpPwd"].Visible = false;
+                    this.EmpView.Columns["EmpImg"].Visible = false;
+                    this.EmpView.Columns["GradeNum"].Visible = false;
+                    this.EmpView.Columns["GradeNum1"].Visible = false;
+                    EmpView.Columns[0].HeaderText = "사원번호";
+                    EmpView.Columns[1].HeaderText = "사원명";
+                    EmpView.Columns[2].HeaderText = "비밀번호";
+                    EmpView.Columns[3].HeaderText = "사진";
+                    EmpView.Columns[4].HeaderText = "근무시간";
+                    EmpView.Columns[5].HeaderText = "전화번호";
+                    EmpView.Columns[6].HeaderText = "입사일";
+                    EmpView.Columns[7].HeaderText = "";
+                    EmpView.Columns[8].HeaderText = "";
+                    EmpView.Columns[9].HeaderText = "직급";
+                    EmpView.Columns[10].HeaderText = "시급";
+                    EmpView.Columns[0].Width = 150;
+                    EmpView.Columns[1].Width = 160;
+                    EmpView.Columns[2].Width = 160;
+                    EmpView.Columns[3].Width = 160;
+                    EmpView.Columns[4].Width = 150;
+                    EmpView.Columns[5].Width = 150;
+                    EmpView.Columns[6].Width = 150;
+                    EmpView.Columns[7].Width = 150;
                     #endregion
                 }
             }
-        }
-        private void LoadImg()
+        }//예외처리
+        private void LoadImg()   //이미지로드//예외처리
         {
-            ImageConverter converter = new ImageConverter();
-            bImg = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+            try
+            {
+                ImageConverter converter = new ImageConverter();
+                bImg = (byte[])converter.ConvertTo(EmpImg.Image, typeof(byte[]));
+            }
+            catch (NotSupportedException)
+            {
+                throw;
+            }
         }
         private void Empty()
         {
-            pictureBox1.Image = Properties.Resources.noimage;
+            EmpImg.Image = Properties.Resources.noimage;
             tboxEname.Text = mboxPass.Text = tboxENum.Text = mtboxTel.Text = cboxDept.Text = cboxdate.Text = dateTimePicker1.Text = "";
             tboxEname.Focus();
         }
-        private void Parameter(SqlCommand cmd)
-        {
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@EmpId", int.Parse(tboxENum.Text));
-            cmd.Parameters.AddWithValue("@EmpName", tboxEname.Text.Trim().Replace(" ", ""));
-            cmd.Parameters.AddWithValue("@EmpPwd", int.Parse(mboxPass.Text));
-            cmd.Parameters.AddWithValue("@EmpImg", bImg);
-            cmd.Parameters.AddWithValue("@WorkTime", int.Parse(cboxdate.Text));
-            cmd.Parameters.AddWithValue("@Phone", mtboxTel.Text);
-            cmd.Parameters.AddWithValue("@GradeName", cboxDept.Text);
-            cmd.Parameters.AddWithValue("@Hiredate", DateTime.Parse(dateTimePicker1.Text));
-        }
         private void Resets(DataSet ds)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = ds.Tables[0];
-            EmpLoad();
+            try
+            {
+                EmpView.DataSource = null;
+                EmpView.DataSource = ds.Tables[0];
+                EmpLoad();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         private void btnSelect_Click(object sender, EventArgs e)
         {
@@ -135,13 +152,36 @@ namespace PosProject0._1
             if (dlg == DialogResult.OK)
             {
                 Img = openFileDialog1.FileName;
-                pictureBox1.Image = new Bitmap(Img);
+                EmpImg.Image = new Bitmap(Img);
             }
         }//사진선택
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Resets(ds);
+        }//새로고침 
         private void btnCancle_Click(object sender, EventArgs e)
         {
             Empty();
         }//취소
+        private void Parameter(SqlCommand cmd)
+        {
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EmpId", int.Parse(tboxENum.Text));
+                cmd.Parameters.AddWithValue("@EmpName", tboxEname.Text.Trim().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@EmpPwd", int.Parse(mboxPass.Text));
+                cmd.Parameters.AddWithValue("@EmpImg", bImg);
+                cmd.Parameters.AddWithValue("@WorkTime", int.Parse(cboxdate.Text));
+                cmd.Parameters.AddWithValue("@Phone", mtboxTel.Text);
+                cmd.Parameters.AddWithValue("@GradeName", cboxDept.Text);
+                cmd.Parameters.AddWithValue("@Hiredate", DateTime.Parse(dateTimePicker1.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("사번과 비밀번호,시간은 숫자를 입력해 주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }//속성//예외처리
         private void frmEmp_Load(object sender, EventArgs e)
         {
             EmpLoad();
@@ -152,17 +192,106 @@ namespace PosProject0._1
             cboxDept.Items.Add("정직원");
             cboxDept.Items.Add("신입");
             mboxPass.PasswordChar = '*';
-            pictureBox1.Image = Properties.Resources.noimage;
+            EmpImg.Image = Properties.Resources.noimage;
         }//폼로드
-        private void dataGridView1_Click(object sender, EventArgs e)
+        private void btnEmpSave_Click(object sender, EventArgs e)
         {
-            tboxENum.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            tboxEname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            mboxPass.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            mtboxTel.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            cboxdate.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            cboxDept.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            lbldate.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            if (CheckEmp() && EmpId())
+            {
+                emp = ds.Tables[0];
+                employee = emp.NewRow();
+                emp.Rows.Add(employee);
+                LoadImg();
+                using (var con = new Connector().getInstance())
+                {
+                    using (var cmd = new SqlCommand("SaveEmployee", con))
+                    {
+                        try
+                        {
+                            Parameter(cmd);
+                            adapter.InsertCommand = cmd;
+                            adapter.Update(ds);
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("데이터가 유효하지 않아 상품 저장을 실패 하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    Resets(ds);
+                }
+            }
+            else
+            {
+                Empty();
+                return;
+            }
+        }//직원등록//예외처리
+        private void btnEmpDel_Click(object sender, EventArgs e)
+        {
+            using (var con = new Connector().getInstance())
+            {
+                using (var cmd = new SqlCommand("EmpDelete", con))
+                {
+
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@EmpId", tboxENum.Text);
+                        adapter.DeleteCommand = con.CreateCommand();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                        throw;
+                    }
+                }
+                Resets(ds);
+            }
+            Empty();
+        }//직원삭제//예외처리
+        private void btnEmpModi_Click(object sender, EventArgs e)
+        {
+            using (var con = new Connector().getInstance())
+            {
+                using (var cmd = new SqlCommand("UpdateEmp", con))
+                {
+                    LoadImg();
+                    try
+                    {
+                        Parameter(cmd);
+                        adapter.UpdateCommand = con.CreateCommand();
+                        adapter.UpdateCommand = cmd;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("사번과 비밀번호,시간은 숫자를 입력해 주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                Resets(ds);
+            }
+            Empty();
+        }//직원수정//예외처리
+        private void EmpView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                tboxENum.Text = EmpView.CurrentRow.Cells[0].Value.ToString();
+                tboxEname.Text = EmpView.CurrentRow.Cells[1].Value.ToString();
+                mboxPass.Text = EmpView.CurrentRow.Cells[2].Value.ToString();
+                mtboxTel.Text = EmpView.CurrentRow.Cells[5].Value.ToString();
+                cboxdate.Text = EmpView.CurrentRow.Cells[4].Value.ToString();
+                cboxDept.Text = EmpView.CurrentRow.Cells[9].Value.ToString();
+                lbldate.Text = EmpView.CurrentRow.Cells[6].Value.ToString();
+            }
+            catch (NullReferenceException)
+            {
+
+                throw;
+            }
             using (var con = new Connector().getInstance())
             {
                 using (var cmd = new SqlCommand("EmpImg", con))
@@ -179,11 +308,11 @@ namespace PosProject0._1
                                 try
                                 {
                                     byte[] img = (byte[])sdr["EmpImg"];
-                                    pictureBox1.Image = new Bitmap(new MemoryStream(img));
+                                    EmpImg.Image = new Bitmap(new MemoryStream(img));
                                 }
                                 catch (Exception)
                                 {
-                                    pictureBox1.Image = null;
+                                    EmpImg.Image = null;
                                 }
                             }
 
@@ -195,116 +324,50 @@ namespace PosProject0._1
                     }
                 }
             }
-        }//클릭시 데이터 나타남
-        private void btnReset_Click(object sender, EventArgs e)
+        }//데이터 클릭시 나타남//예외처리
+        private void EmpView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Resets(ds);
-        }//새로고침 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (CheckEmp() && EmpId())
+            try
             {
-                emp = ds.Tables[0];
-                employee = emp.NewRow();
-                emp.Rows.Add(employee);
-                LoadImg();
-                using (var con = new Connector().getInstance())
+                EmpView.BeginEdit(true);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }//데이터 클릭시 나타남//예외처리
+
+        private void tboxSerach_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < EmpView.RowCount; i++)
                 {
-                    using (var cmd = new SqlCommand("SaveEmployee", con))
+                    bool cell = EmpView.Rows[i].Cells[1].Value.ToString().ToUpper().Contains(tboxSerach.Text.ToUpper().Trim());
+                    if (!cell)
                     {
-                        Parameter(cmd);
-                        adapter.InsertCommand = cmd;
-                        adapter.Update(ds);
+
+                        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[EmpView.DataSource];
+                        currencyManager1.SuspendBinding();
+                        EmpView.Rows[i].Visible = false;
+                        currencyManager1.ResumeBinding();
                     }
-                    Resets(ds);
-                }
-            }
-            else
-            {
-                MessageBox.Show("데이터가 유효하지 않아 저장 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Empty();
-                return;
-            }
-        }//직원추가
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            using (var con = new Connector().getInstance())
-            {
-                using (var cmd = new SqlCommand("EmpDelete", con))
-                {
-                    //실행할 쿼리문이 저장프로시저에 있다.
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    //저장프로시저 실행에 필요한 파라메터를 지정
-                    cmd.Parameters.AddWithValue("@EmpId", tboxENum.Text);
-                    adapter.DeleteCommand = con.CreateCommand();
-                    adapter.DeleteCommand = cmd;
-                    adapter.DeleteCommand.ExecuteNonQuery();
-                }
-                Resets(ds);
-            }
-            Empty();
-        }//직원삭제
-        private void btnModified_Click(object sender, EventArgs e)
-        {
-            using (var con = new Connector().getInstance())
-            {
-                using (var cmd = new SqlCommand("UpdateEmp", con))
-                {
-                    LoadImg();
-                    Parameter(cmd);
-                    adapter.UpdateCommand = con.CreateCommand();
-                    adapter.UpdateCommand = cmd;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-                }
-                Resets(ds);
-            }
-            Empty();
-        }//직원수정
-        private void btnSerch_Click(object sender, EventArgs e)
-        {
-            using (var con = new Connector().getInstance())
-            {
-                using (var cmd = new SqlCommand("EmpSerach", con))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EmpName", tboxSerach.Text);
-                    int i = cmd.ExecuteNonQuery();//insert문 1=저장 0=저장 안됨
-                    var sdr = cmd.ExecuteReader();
-                    byte[] img = null;
-                    if (!sdr.HasRows)
+                    else if (cell)
                     {
-                        MessageBox.Show("찾으시는 직원이 없습니다","알림",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        return;
+
+                        EmpView.Rows[i].Visible = true;
                     }
-                    else
+                    else if (tboxSerach.Text == null)
                     {
-                        while (sdr.Read())
-                        {
-                            img = (byte[])sdr["EmpImg"];
-                            if (img != null)
-                            {
-                                try
-                                {
-                                    MemoryStream ms = new MemoryStream();
-                                    ms.Write(img, 0, img.Length);
-                                    pictureBox1.Image = new Bitmap(new MemoryStream(img));
-                                }
-                                catch (Exception)
-                                {
-                                    pictureBox1.Image = null;
-                                }
-                            }
-                        }
-                        sdr.Close();
-                        adapter = new SqlDataAdapter();
-                        adapter.SelectCommand = cmd;
-                        ds = new DataSet();
-                        adapter.Fill(ds);
-                        dataGridView1.DataSource = ds.Tables[0];
+                        EmpView.Rows[i].Visible = true;
                     }
-                    con.Close();
                 }
             }
-        }//직원조회
+            catch (InvalidOperationException)
+            {
+                throw;
+            }
+        }
     }
 }
