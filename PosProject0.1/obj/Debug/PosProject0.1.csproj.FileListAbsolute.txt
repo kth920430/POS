@@ -19,5 +19,5 @@ C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.csproj.Generat
 C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.csproj.CoreCompileInputs.cache
 C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.exe
 C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0.1.pdb
-C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\convenienceStorePos.frmPayChoice.resources
 C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.frmBarCode.resources
+C:\Users\gd3-22\Desktop\pos\PosProject0.1\obj\Debug\PosProject0._1.frmCash.resources

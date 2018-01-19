@@ -33,20 +33,18 @@
             this.btnCode = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnPayChoice = new System.Windows.Forms.Button();
-            this.btnDC = new System.Windows.Forms.Button();
-            this.btnRefund = new System.Windows.Forms.Button();
+            this.btnRefundCard = new System.Windows.Forms.Button();
             this.lblVer = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl3 = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblget = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
+            this.lblneed = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblDC = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblSumdis = new System.Windows.Forms.Label();
@@ -64,6 +62,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCard = new System.Windows.Forms.Button();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.btnCash = new System.Windows.Forms.Button();
+            this.btnRefundCash = new System.Windows.Forms.Button();
+            this.lblPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -73,12 +76,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(14, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(750, 150);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(841, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnCode
@@ -103,6 +109,7 @@
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "품목 제거";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnReset
             // 
@@ -116,39 +123,16 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnPayChoice
+            // btnRefundCard
             // 
-            this.btnPayChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPayChoice.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPayChoice.Location = new System.Drawing.Point(869, 310);
-            this.btnPayChoice.Name = "btnPayChoice";
-            this.btnPayChoice.Size = new System.Drawing.Size(171, 80);
-            this.btnPayChoice.TabIndex = 4;
-            this.btnPayChoice.Text = "결제 선택";
-            this.btnPayChoice.UseVisualStyleBackColor = false;
-            this.btnPayChoice.Click += new System.EventHandler(this.btnPayChoice_Click);
-            // 
-            // btnDC
-            // 
-            this.btnDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnDC.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDC.Location = new System.Drawing.Point(869, 396);
-            this.btnDC.Name = "btnDC";
-            this.btnDC.Size = new System.Drawing.Size(171, 80);
-            this.btnDC.TabIndex = 5;
-            this.btnDC.Text = "결제 후\r\n할인/적립/현금";
-            this.btnDC.UseVisualStyleBackColor = false;
-            // 
-            // btnRefund
-            // 
-            this.btnRefund.BackColor = System.Drawing.Color.Yellow;
-            this.btnRefund.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRefund.Location = new System.Drawing.Point(869, 482);
-            this.btnRefund.Name = "btnRefund";
-            this.btnRefund.Size = new System.Drawing.Size(171, 80);
-            this.btnRefund.TabIndex = 6;
-            this.btnRefund.Text = "환 불";
-            this.btnRefund.UseVisualStyleBackColor = false;
+            this.btnRefundCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRefundCard.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRefundCard.Location = new System.Drawing.Point(869, 484);
+            this.btnRefundCard.Name = "btnRefundCard";
+            this.btnRefundCard.Size = new System.Drawing.Size(171, 80);
+            this.btnRefundCard.TabIndex = 6;
+            this.btnRefundCard.Text = "환 불 (카드)";
+            this.btnRefundCard.UseVisualStyleBackColor = false;
             // 
             // lblVer
             // 
@@ -181,13 +165,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblChange, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblTotal, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblget, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbl2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblneed, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblDC, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(544, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -205,49 +189,51 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 60);
             this.label1.TabIndex = 11;
-            this.label1.Text = "상품등록";
+            this.label1.Text = "할 인";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl4
+            // lblChange
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl4.Location = new System.Drawing.Point(151, 180);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(143, 61);
-            this.lbl4.TabIndex = 18;
-            this.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblChange.AutoSize = true;
+            this.lblChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblChange.Location = new System.Drawing.Point(151, 180);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.Size = new System.Drawing.Size(143, 61);
+            this.lblChange.TabIndex = 18;
+            this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblTotal
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(3, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 60);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "받을금액";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotal.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblTotal.Location = new System.Drawing.Point(3, 60);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(142, 60);
+            this.lblTotal.TabIndex = 12;
+            this.lblTotal.Text = "합계금액?";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl3
+            // lblget
             // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl3.Location = new System.Drawing.Point(151, 120);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(143, 60);
-            this.lbl3.TabIndex = 17;
-            this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblget.AutoSize = true;
+            this.lblget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblget.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblget.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblget.Location = new System.Drawing.Point(151, 120);
+            this.lblget.Name = "lblget";
+            this.lblget.Size = new System.Drawing.Size(143, 60);
+            this.lblget.TabIndex = 17;
+            this.lblget.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -256,6 +242,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(3, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 60);
@@ -263,16 +250,16 @@
             this.label3.Text = "받은금액";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl2
+            // lblneed
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl2.Location = new System.Drawing.Point(151, 60);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(143, 60);
-            this.lbl2.TabIndex = 16;
-            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblneed.AutoSize = true;
+            this.lblneed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblneed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblneed.Location = new System.Drawing.Point(151, 60);
+            this.lblneed.Name = "lblneed";
+            this.lblneed.Size = new System.Drawing.Size(143, 60);
+            this.lblneed.TabIndex = 16;
+            this.lblneed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -281,6 +268,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(3, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 61);
@@ -288,17 +276,17 @@
             this.label4.Text = "거스름돈";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl1
+            // lblDC
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl1.Location = new System.Drawing.Point(151, 0);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(143, 60);
-            this.lbl1.TabIndex = 15;
-            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDC.AutoSize = true;
+            this.lblDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblDC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDC.Location = new System.Drawing.Point(151, 0);
+            this.lblDC.Name = "lblDC";
+            this.lblDC.Size = new System.Drawing.Size(143, 60);
+            this.lblDC.TabIndex = 15;
+            this.lblDC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // listView1
             // 
@@ -310,20 +298,23 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.61765F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.38235F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel2.Controls.Add(this.lblSumdis, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSummoney, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSumcount, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSumTotal, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblPrice, 4, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 204);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(750, 39);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(841, 39);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // lblSumdis
@@ -332,9 +323,9 @@
             this.lblSumdis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumdis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumdis.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumdis.Location = new System.Drawing.Point(641, 0);
+            this.lblSumdis.Location = new System.Drawing.Point(619, 0);
             this.lblSumdis.Name = "lblSumdis";
-            this.lblSumdis.Size = new System.Drawing.Size(106, 39);
+            this.lblSumdis.Size = new System.Drawing.Size(103, 39);
             this.lblSumdis.TabIndex = 15;
             this.lblSumdis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -344,9 +335,9 @@
             this.lblSummoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSummoney.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSummoney.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSummoney.Location = new System.Drawing.Point(535, 0);
+            this.lblSummoney.Location = new System.Drawing.Point(528, 0);
             this.lblSummoney.Name = "lblSummoney";
-            this.lblSummoney.Size = new System.Drawing.Size(100, 39);
+            this.lblSummoney.Size = new System.Drawing.Size(85, 39);
             this.lblSummoney.TabIndex = 14;
             this.lblSummoney.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -356,9 +347,9 @@
             this.lblSumcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumcount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSumcount.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumcount.Location = new System.Drawing.Point(438, 0);
+            this.lblSumcount.Location = new System.Drawing.Point(447, 0);
             this.lblSumcount.Name = "lblSumcount";
-            this.lblSumcount.Size = new System.Drawing.Size(91, 39);
+            this.lblSumcount.Size = new System.Drawing.Size(75, 39);
             this.lblSumcount.TabIndex = 13;
             this.lblSumcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -372,7 +363,7 @@
             this.lblSumTotal.ForeColor = System.Drawing.Color.Black;
             this.lblSumTotal.Location = new System.Drawing.Point(3, 0);
             this.lblSumTotal.Name = "lblSumTotal";
-            this.lblSumTotal.Size = new System.Drawing.Size(429, 39);
+            this.lblSumTotal.Size = new System.Drawing.Size(438, 39);
             this.lblSumTotal.TabIndex = 12;
             this.lblSumTotal.Text = "합계 수 량/금 액/할 인";
             this.lblSumTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -443,6 +434,7 @@
             this.btnCountUp.TabIndex = 20;
             this.btnCountUp.Text = "수량(+)";
             this.btnCountUp.UseVisualStyleBackColor = false;
+            this.btnCountUp.Click += new System.EventHandler(this.btnCountUp_Click);
             // 
             // btnCountDown
             // 
@@ -453,6 +445,7 @@
             this.btnCountDown.TabIndex = 21;
             this.btnCountDown.Text = "수량(-)";
             this.btnCountDown.UseVisualStyleBackColor = false;
+            this.btnCountDown.Click += new System.EventHandler(this.btnCountDown_Click);
             // 
             // btnAddPB
             // 
@@ -479,12 +472,13 @@
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnPay.Location = new System.Drawing.Point(712, 570);
+            this.btnPay.Location = new System.Drawing.Point(717, 570);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(146, 80);
             this.btnPay.TabIndex = 24;
             this.btnPay.Text = "결제 하기";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // button1
             // 
@@ -496,12 +490,73 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCard
+            // 
+            this.btnCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCard.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCard.Location = new System.Drawing.Point(869, 310);
+            this.btnCard.Name = "btnCard";
+            this.btnCard.Size = new System.Drawing.Size(171, 80);
+            this.btnCard.TabIndex = 25;
+            this.btnCard.Text = "카드 결제";
+            this.btnCard.UseVisualStyleBackColor = false;
+            this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBarcode.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBarcode.Location = new System.Drawing.Point(385, 260);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(468, 19);
+            this.txtBarcode.TabIndex = 27;
+            this.txtBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarcode_KeyDown);
+            // 
+            // btnCash
+            // 
+            this.btnCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCash.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCash.Location = new System.Drawing.Point(869, 396);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(171, 80);
+            this.btnCash.TabIndex = 26;
+            this.btnCash.Text = "현금 결제";
+            this.btnCash.UseVisualStyleBackColor = false;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // btnRefundCash
+            // 
+            this.btnRefundCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRefundCash.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRefundCash.Location = new System.Drawing.Point(561, 570);
+            this.btnRefundCash.Name = "btnRefundCash";
+            this.btnRefundCash.Size = new System.Drawing.Size(146, 80);
+            this.btnRefundCash.TabIndex = 28;
+            this.btnRefundCash.Text = "환 불 (현금)";
+            this.btnRefundCash.UseVisualStyleBackColor = false;
+            this.btnRefundCash.Click += new System.EventHandler(this.btnRefundCash_Click);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPrice.Location = new System.Drawing.Point(728, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(110, 39);
+            this.lblPrice.TabIndex = 16;
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 654);
+            this.Controls.Add(this.btnRefundCash);
+            this.Controls.Add(this.txtBarcode);
+            this.Controls.Add(this.btnCash);
+            this.Controls.Add(this.btnCard);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnClose);
@@ -511,9 +566,7 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnRefund);
-            this.Controls.Add(this.btnDC);
-            this.Controls.Add(this.btnPayChoice);
+            this.Controls.Add(this.btnRefundCard);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnCode);
@@ -522,6 +575,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmSale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSale";
             this.Load += new System.EventHandler(this.frmSale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -533,6 +587,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -540,23 +595,15 @@
         private System.Windows.Forms.Button btnCode;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnPayChoice;
-        private System.Windows.Forms.Button btnDC;
-        private System.Windows.Forms.Button btnRefund;
+        private System.Windows.Forms.Button btnRefundCard;
         private System.Windows.Forms.Label lblVer;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblSumdis;
-        private System.Windows.Forms.Label lblSummoney;
-        private System.Windows.Forms.Label lblSumcount;
         private System.Windows.Forms.Label lblSumTotal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblDate;
@@ -571,6 +618,17 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbl1;
+        public System.Windows.Forms.Label lblSumdis;
+        public System.Windows.Forms.Label lblSummoney;
+        public System.Windows.Forms.Label lblSumcount;
+        public System.Windows.Forms.Label lblneed;
+        private System.Windows.Forms.Button btnCard;
+        public System.Windows.Forms.Label lblget;
+        public System.Windows.Forms.Label lblChange;
+        public System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.Button btnCash;
+        private System.Windows.Forms.Button btnRefundCash;
+        public System.Windows.Forms.Label lblDC;
+        public System.Windows.Forms.Label lblPrice;
     }
 }

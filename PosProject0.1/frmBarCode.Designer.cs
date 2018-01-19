@@ -74,15 +74,15 @@
             this.Name = "frmBarCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBarCode";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBarCode_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtbarCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.TextBox txtbarCode;
     }
 }

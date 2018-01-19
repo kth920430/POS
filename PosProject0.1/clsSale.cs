@@ -53,5 +53,14 @@ namespace PosProject0._1
             set { discount = value; }
         }
 
+        //이벤트 행사 이름
+        private string eventname;
+
+        public string EventName
+        {
+            get { return eventname; }
+            set { eventname = value; }
+        }
+
     }
 }

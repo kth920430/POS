@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsSale.cs" />
+    <Compile Include="clsVirtualKB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +60,11 @@
     <Compile Include="frmBarCode.Designer.cs">
       <DependentUpon>frmBarCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPayChoice.cs">
+    <Compile Include="frmCash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPayChoice.designer.cs">
-      <DependentUpon>frmPayChoice.cs</DependentUpon>
+    <Compile Include="frmCash.Designer.cs">
+      <DependentUpon>frmCash.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSale.cs">
       <SubType>Form</SubType>
@@ -79,8 +80,8 @@
     <EmbeddedResource Include="frmBarCode.resx">
       <DependentUpon>frmBarCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPayChoice.resx">
-      <DependentUpon>frmPayChoice.cs</DependentUpon>
+    <EmbeddedResource Include="frmCash.resx">
+      <DependentUpon>frmCash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSale.resx">
       <DependentUpon>frmSale.cs</DependentUpon>
