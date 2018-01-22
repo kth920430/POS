@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 using static PosProject0._1.Form1;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PosProject0._1
 {
     public partial class frmProducts : Form
     {
-        DataSet ds;
+        DataSet ds,category,even,sup;
         SqlDataAdapter adapter;
         DataTable pro;
         DataRow products;
@@ -82,6 +79,28 @@ namespace PosProject0._1
                         ds = new DataSet();
                         adapter.Fill(ds);
                         ProductView.DataSource = ds.Tables[0];
+
+                        category = new DataSet();
+                        adapter.Fill(category);
+                        foreach (DataRow row in category.Tables[1].Rows)
+                        {
+                            cboxCat.Items.Add(row.ItemArray[0]);
+                            cboxCategory.Items.Add(row.ItemArray[0]);
+                        }
+                        even = new DataSet();
+                        adapter.Fill(even);
+                        foreach (DataRow row in even.Tables[2].Rows)
+                        {
+                            cboxEve.Items.Add(row.ItemArray[0]);
+                            
+                        }
+                        sup = new DataSet();
+                        adapter.Fill(sup);
+                        foreach (DataRow row in sup.Tables[3].Rows)
+                        {
+                            cboxSup.Items.Add(row.ItemArray[0]);
+
+                        }
                     }
                     catch (Exception)
                     {
@@ -105,8 +124,9 @@ namespace PosProject0._1
                     ProductView.Columns[4].Width = 140;
                     ProductView.Columns[5].Width = 140;
                     ProductView.Columns[6].Width = 140;
-                  #endregion
+                    #endregion
                 }
+               
             }
         }//예외처리
         private void LoadImg()
@@ -132,6 +152,10 @@ namespace PosProject0._1
         {
             try
             {
+                cboxCat.Items.Clear();
+                cboxCategory.Items.Clear();
+                cboxEve.Items.Clear();
+                cboxSup.Items.Clear();
                 ProductView.DataSource = null;
                 ProductView.DataSource = ds.Tables[0];
                 ProductLoad();
@@ -183,39 +207,6 @@ namespace PosProject0._1
         {
             ProductLoad();
             //clsVirtualKB.Open();
-            #region 상품종류
-            cboxCat.Items.Add("술");
-            cboxCat.Items.Add("아이스크림");
-            cboxCat.Items.Add("음료");
-            cboxCat.Items.Add("과자");
-            cboxCat.Items.Add("라면");
-            cboxCat.Items.Add("도시락");
-            cboxCat.Items.Add("우유");
-            cboxCat.Items.Add("비닐봉투"); 
-            #endregion
-            #region 상품종류2
-            cboxCategory.Items.Add("술");
-            cboxCategory.Items.Add("아이스크림");
-            cboxCategory.Items.Add("음료");
-            cboxCategory.Items.Add("과자");
-            cboxCategory.Items.Add("라면");
-            cboxCategory.Items.Add("도시락");
-            cboxCategory.Items.Add("우유"); 
-            #endregion
-            #region 이벤트
-            cboxEve.Items.Add("1+1 행사상품");
-            cboxEve.Items.Add("2+1 행사상품");
-            cboxEve.Items.Add("일반 상품"); 
-            #endregion
-            #region 공급업체
-            cboxSup.Items.Add("LOTTE");
-            cboxSup.Items.Add("동서식품");
-            cboxSup.Items.Add("삼양식품");
-            cboxSup.Items.Add("오리온");
-            cboxSup.Items.Add("해테");
-            cboxSup.Items.Add("비닐봉투");
-            cboxSup.Items.Add("농심");
-            #endregion
             ProductImg.Image = Properties.Resources.noimage;
         }//폼로드
         private void btnProAdd_Click(object sender, EventArgs e)
@@ -252,7 +243,6 @@ namespace PosProject0._1
             }
 
         }//상품등록//예외처리
-
         private void btnProDel_Click(object sender, EventArgs e)
         {
             using (var con = new Connector().getInstance())
@@ -299,7 +289,6 @@ namespace PosProject0._1
             }
             Empty();
         }//상품수정//예외처리
-
         private void tboxProSearch_TextChanged(object sender, EventArgs e)
         {
             try
@@ -394,7 +383,6 @@ namespace PosProject0._1
                 throw;
             }
         }//상품종류 검색//예외처리  
-
         private void ProductView_Click(object sender, EventArgs e)
         {
             try
@@ -460,6 +448,92 @@ namespace PosProject0._1
              throw;
             }
         }//데이터 클릭시 나타남//예외처리
-       
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            this.saveFileDialog1.FileName = "품목";
+            this.saveFileDialog1.DefaultExt = "xls";
+            this.saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+            this.saveFileDialog1.InitialDirectory = "c:\\";
+
+            DialogResult result = saveFileDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int num = 0;
+                object missingType = Type.Missing;
+
+                Excel.Application objApp;
+                Excel._Workbook objBook;
+                Excel.Workbooks objBooks;
+                Excel.Sheets objSheets;
+                Excel._Worksheet objSheet;
+                Excel.Range range;
+
+                string[] headers = new string[ProductView.ColumnCount];
+                string[] columns = new string[ProductView.ColumnCount];
+
+
+                try
+                {
+                    objApp = new Excel.Application();
+                    objBooks = objApp.Workbooks;
+                    objBook = objBooks.Add(Missing.Value);
+                    objSheets = objBook.Worksheets;
+                    objSheet = (Excel._Worksheet)objSheets.get_Item(1);
+
+                    for (int c = 0; c < ProductView.ColumnCount; c++)
+                    {
+                        objSheet.Cells[1, c + 1] = ProductView.Columns[c].HeaderText;  
+                        headers[c] = ProductView.Rows[0].Cells[c].OwningColumn.HeaderText.ToString();
+                        num = c + 65;
+                        columns[c] = Convert.ToString((char)num);
+                    }
+
+
+                    //range.set_Value
+                    for (int i = 0; i < ProductView.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < ProductView.ColumnCount; j++)
+                        {
+                            objSheet.get_Range(columns[j] + Convert.ToString(i + 2),
+                                                                   Missing.Value).NumberFormat = "@"; 
+                            range = objSheet.get_Range(columns[j] + Convert.ToString(i + 2),
+                                                                   Missing.Value);
+                            range.set_Value(Missing.Value,
+                                                  ProductView.Rows[i].Cells[j].Value.ToString());
+
+                        }
+                    }
+                    objApp.Visible = false;
+                    objApp.UserControl = false;
+
+                    objBook.SaveAs(@saveFileDialog1.FileName,
+                              Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal,
+                              missingType, missingType, missingType, missingType,
+                              Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange,
+                              missingType, missingType, missingType, missingType, missingType);
+                    objBook.Close(false, missingType, missingType);
+
+                    Cursor.Current = Cursors.Default;
+
+                    MessageBox.Show("저장이 정상적으로 되었습니다.");
+                }
+                catch (Exception theException)
+                {
+                    String errorMessage;
+                    errorMessage = "Error: ";
+                    errorMessage = String.Concat(errorMessage, theException.Message);
+                    errorMessage = String.Concat(errorMessage, " Line: ");
+                    errorMessage = String.Concat(errorMessage, theException.Source);
+
+                    MessageBox.Show(errorMessage, "Error");
+                }
+            }
+        }//액셀저장
+        private void lblCateAdd_Click(object sender, EventArgs e)
+        {
+            new frmCategory().ShowDialog();
+        }
     }
-}
+ }
+

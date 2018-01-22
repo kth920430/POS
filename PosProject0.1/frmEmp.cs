@@ -4,14 +4,16 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 using static PosProject0._1.Form1;
+using System.Reflection;
 
 namespace PosProject0._1
 {
 
     public partial class frmEmp : Form
     {
-        DataSet ds;
+        DataSet ds,grade;
         SqlDataAdapter adapter;
         DataTable emp;
         DataRow employee;
@@ -78,10 +80,16 @@ namespace PosProject0._1
                         ds = new DataSet();
                         adapter.Fill(ds);
                         EmpView.DataSource = ds.Tables[0];
+
+                        grade = new DataSet();
+                        adapter.Fill(grade);
+                        foreach (DataRow row in grade.Tables[1].Rows)
+                        {
+                            cboxDept.Items.Add(row.ItemArray[0]);
+                        }
                     }
                     catch (Exception)
                     {
-
                         throw;
                     }
                     cboxdate.Items.Clear();
@@ -102,14 +110,14 @@ namespace PosProject0._1
                     EmpView.Columns[8].HeaderText = "";
                     EmpView.Columns[9].HeaderText = "직급";
                     EmpView.Columns[10].HeaderText = "시급";
-                    EmpView.Columns[0].Width = 150;
-                    EmpView.Columns[1].Width = 160;
-                    EmpView.Columns[2].Width = 160;
-                    EmpView.Columns[3].Width = 160;
-                    EmpView.Columns[4].Width = 150;
-                    EmpView.Columns[5].Width = 150;
-                    EmpView.Columns[6].Width = 150;
-                    EmpView.Columns[7].Width = 150;
+                    EmpView.Columns[0].Width = 100;
+                    EmpView.Columns[1].Width = 120;
+                    EmpView.Columns[2].Width = 140;
+                    EmpView.Columns[3].Width = 140;
+                    EmpView.Columns[4].Width = 90;
+                    EmpView.Columns[5].Width = 120;
+                    EmpView.Columns[6].Width = 120;
+                    EmpView.Columns[7].Width = 100;
                     #endregion
                 }
             }
@@ -186,11 +194,6 @@ namespace PosProject0._1
         {
             EmpLoad();
             clsVirtualKB.Open();
-            cboxDept.Items.Add("사장");
-            cboxDept.Items.Add("매니저");
-            cboxDept.Items.Add("우수직원");
-            cboxDept.Items.Add("정직원");
-            cboxDept.Items.Add("신입");
             mboxPass.PasswordChar = '*';
             EmpImg.Image = Properties.Resources.noimage;
         }//폼로드
@@ -337,7 +340,6 @@ namespace PosProject0._1
                 throw;
             }
         }//데이터 클릭시 나타남//예외처리
-
         private void tboxSerach_TextChanged(object sender, EventArgs e)
         {
             try
@@ -368,6 +370,6 @@ namespace PosProject0._1
             {
                 throw;
             }
-        }
-    }
+        }//직원이름//예외처리
+     }
 }
