@@ -4,9 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
 using static PosProject0._1.Form1;
-using System.Reflection;
 
 namespace PosProject0._1
 {
@@ -92,6 +90,7 @@ namespace PosProject0._1
                     {
                         throw;
                     }
+                   
                     cboxdate.Items.Clear();
                     cboxdate.Items.Add(0);
                     #region EmpView
@@ -139,11 +138,12 @@ namespace PosProject0._1
             EmpImg.Image = Properties.Resources.noimage;
             tboxEname.Text = mboxPass.Text = tboxENum.Text = mtboxTel.Text = cboxDept.Text = cboxdate.Text = dateTimePicker1.Text = "";
             tboxEname.Focus();
-        }
+        }//비우기
         private void Resets(DataSet ds)
         {
             try
             {
+                cboxDept.Items.Clear();
                 EmpView.DataSource = null;
                 EmpView.DataSource = ds.Tables[0];
                 EmpLoad();
@@ -153,7 +153,7 @@ namespace PosProject0._1
 
                 throw;
             }
-        }
+        }//재로딩
         private void btnSelect_Click(object sender, EventArgs e)
         {
             var dlg = openFileDialog1.ShowDialog();
@@ -192,6 +192,7 @@ namespace PosProject0._1
         }//속성//예외처리
         private void frmEmp_Load(object sender, EventArgs e)
         {
+            
             EmpLoad();
             clsVirtualKB.Open();
             mboxPass.PasswordChar = '*';
@@ -233,7 +234,7 @@ namespace PosProject0._1
         {
             using (var con = new Connector().getInstance())
             {
-                using (var cmd = new SqlCommand("EmpDelete", con))
+                using (var cmd = new SqlCommand("DeleteEmp", con))
                 {
 
                     try
@@ -371,5 +372,16 @@ namespace PosProject0._1
                 throw;
             }
         }//직원이름//예외처리
-     }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            Keys key = keyData & ~(Keys.Shift | Keys.Control);
+            switch (key)
+            {
+                case Keys.F5:
+                    Resets(ds);
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }//단축키 
+    }
 }

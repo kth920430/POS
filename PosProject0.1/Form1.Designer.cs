@@ -67,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 109);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(150, 0, 150, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(177, 565);
+            this.menuStrip1.Size = new System.Drawing.Size(177, 568);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,7 +141,7 @@
             // 
             this.dateyymmdd.AutoSize = true;
             this.dateyymmdd.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateyymmdd.Location = new System.Drawing.Point(64, 20);
+            this.dateyymmdd.Location = new System.Drawing.Point(72, 20);
             this.dateyymmdd.Name = "dateyymmdd";
             this.dateyymmdd.Size = new System.Drawing.Size(168, 27);
             this.dateyymmdd.TabIndex = 1;
@@ -151,7 +151,7 @@
             // 
             this.dateTime.AutoSize = true;
             this.dateTime.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTime.Location = new System.Drawing.Point(64, 60);
+            this.dateTime.Location = new System.Drawing.Point(72, 60);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(146, 27);
             this.dateTime.TabIndex = 2;
@@ -159,7 +159,7 @@
             // 
             // btnMaster
             // 
-            this.btnMaster.Location = new System.Drawing.Point(1081, 23);
+            this.btnMaster.Location = new System.Drawing.Point(1153, 23);
             this.btnMaster.Name = "btnMaster";
             this.btnMaster.Size = new System.Drawing.Size(63, 34);
             this.btnMaster.TabIndex = 5;
@@ -168,7 +168,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1017, 23);
+            this.button2.Location = new System.Drawing.Point(1089, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 34);
             this.button2.TabIndex = 6;
@@ -177,7 +177,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1150, 23);
+            this.button3.Location = new System.Drawing.Point(1222, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 34);
             this.button3.TabIndex = 7;
@@ -193,7 +193,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel1.Controls.Add(this.dateyymmdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTime, 1, 2);
@@ -206,14 +206,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1236, 109);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1309, 109);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 674);
+            this.ClientSize = new System.Drawing.Size(1309, 677);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.IsMdiContainer = true;

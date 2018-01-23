@@ -99,12 +99,10 @@ namespace PosProject0._1
                         foreach (DataRow row in sup.Tables[3].Rows)
                         {
                             cboxSup.Items.Add(row.ItemArray[0]);
-
                         }
                     }
                     catch (Exception)
                     {
-
                         throw;
                     }
                     #region ProView
@@ -125,8 +123,7 @@ namespace PosProject0._1
                     ProductView.Columns[5].Width = 140;
                     ProductView.Columns[6].Width = 140;
                     #endregion
-                }
-               
+                }   
             }
         }//예외처리
         private void LoadImg()
@@ -247,7 +244,7 @@ namespace PosProject0._1
         {
             using (var con = new Connector().getInstance())
             {
-                using (var cmd = new SqlCommand("ProductDelete", con))
+                using (var cmd = new SqlCommand("DeleteProduct", con))
                 {
                     try
                     {
@@ -397,11 +394,9 @@ namespace PosProject0._1
             }
             catch (NullReferenceException)
             {
-
+                throw;
             }
-
             #region IMG
-            //이미지 할 시
             using (var con = new Connector().getInstance())
             {
                 using (var cmd = new SqlCommand("ProductImg", con))
@@ -444,9 +439,8 @@ namespace PosProject0._1
             }
              catch (Exception)
              {
-
-             throw;
-            }
+                throw;
+             }
         }//데이터 클릭시 나타남//예외처리
         private void btnExcel_Click(object sender, EventArgs e)
         {
@@ -533,7 +527,19 @@ namespace PosProject0._1
         private void lblCateAdd_Click(object sender, EventArgs e)
         {
             new frmCategory().ShowDialog();
-        }
+        }//카테고리 폼 이동
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            Keys key = keyData & ~(Keys.Shift | Keys.Control);
+            switch (key)
+            {
+                case Keys.F5:
+                    Resets(ds);
+                    tboxBarcodeSearch.Text = cboxCategory.Text = tboxProSearch.Text = "";
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }//단축키 
     }
  }
 
