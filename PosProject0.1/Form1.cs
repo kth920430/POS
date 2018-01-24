@@ -74,5 +74,10 @@ namespace PosProject0._1
 
             pro.Show();
         }
+
+        private void 출근ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

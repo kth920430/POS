@@ -37,7 +37,6 @@
             this.mtboxTel = new System.Windows.Forms.MaskedTextBox();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.label9 = new System.Windows.Forms.Label();
-            this.mboxPass = new System.Windows.Forms.MaskedTextBox();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
             this.cboxDept = new System.Windows.Forms.ComboBox();
@@ -58,7 +57,6 @@
             this.EmpView = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbldate = new System.Windows.Forms.Label();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -70,6 +68,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.mboxPass = new System.Windows.Forms.TextBox();
+            this.lbldate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
             this.splitContainer8.Panel2.SuspendLayout();
@@ -205,17 +205,6 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "비번";
             // 
-            // mboxPass
-            // 
-            this.mboxPass.AllowPromptAsInput = false;
-            this.mboxPass.Font = new System.Drawing.Font("굴림", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mboxPass.Location = new System.Drawing.Point(3, 4);
-            this.mboxPass.Mask = "99999999";
-            this.mboxPass.Name = "mboxPass";
-            this.mboxPass.Size = new System.Drawing.Size(277, 48);
-            this.mboxPass.TabIndex = 37;
-            this.mboxPass.ValidatingType = typeof(int);
-            // 
             // splitContainer6
             // 
             this.splitContainer6.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -333,7 +322,7 @@
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1547, 3);
+            this.btnSelect.Location = new System.Drawing.Point(1546, 3);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(159, 58);
             this.btnSelect.TabIndex = 18;
@@ -450,15 +439,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "상세정보";
             // 
-            // lbldate
-            // 
-            this.lbldate.AutoSize = true;
-            this.lbldate.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbldate.Location = new System.Drawing.Point(307, 618);
-            this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(0, 28);
-            this.lbldate.TabIndex = 1;
-            // 
             // splitContainer4
             // 
             this.splitContainer4.Location = new System.Drawing.Point(299, 561);
@@ -515,7 +495,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.08491F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.91509F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tboxSerach, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSelect, 2, 0);
@@ -603,6 +583,23 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1712, 794);
             this.tableLayoutPanel4.TabIndex = 40;
+            // 
+            // mboxPass
+            // 
+            this.mboxPass.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mboxPass.Location = new System.Drawing.Point(3, 3);
+            this.mboxPass.Multiline = true;
+            this.mboxPass.Name = "mboxPass";
+            this.mboxPass.Size = new System.Drawing.Size(277, 40);
+            this.mboxPass.TabIndex = 40;
+            // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Location = new System.Drawing.Point(293, 624);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(0, 36);
+            this.lbldate.TabIndex = 40;
             // 
             // frmEmp
             // 
@@ -696,7 +693,6 @@
         private System.Windows.Forms.Button btnCancle;
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox mboxPass;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridView EmpView;
         private System.Windows.Forms.Label label11;
@@ -704,7 +700,6 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -713,5 +708,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox mboxPass;
+        private System.Windows.Forms.Label lbldate;
     }
 }

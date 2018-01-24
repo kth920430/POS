@@ -136,6 +136,7 @@
             this.출근ToolStripMenuItem.Name = "출근ToolStripMenuItem";
             this.출근ToolStripMenuItem.Size = new System.Drawing.Size(164, 44);
             this.출근ToolStripMenuItem.Text = "출     근";
+            this.출근ToolStripMenuItem.Click += new System.EventHandler(this.출근ToolStripMenuItem_Click);
             // 
             // dateyymmdd
             // 
@@ -159,7 +160,7 @@
             // 
             // btnMaster
             // 
-            this.btnMaster.Location = new System.Drawing.Point(1153, 23);
+            this.btnMaster.Location = new System.Drawing.Point(1152, 23);
             this.btnMaster.Name = "btnMaster";
             this.btnMaster.Size = new System.Drawing.Size(63, 34);
             this.btnMaster.TabIndex = 5;
@@ -168,7 +169,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1089, 23);
+            this.button2.Location = new System.Drawing.Point(1088, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 34);
             this.button2.TabIndex = 6;
@@ -177,7 +178,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1222, 23);
+            this.button3.Location = new System.Drawing.Point(1221, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 34);
             this.button3.TabIndex = 7;
@@ -193,7 +194,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.Controls.Add(this.dateyymmdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTime, 1, 2);

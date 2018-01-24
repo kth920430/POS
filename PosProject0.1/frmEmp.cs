@@ -3,8 +3,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using static PosProject0._1.Form1;
+using static System.Resources.ResXFileRef;
 
 namespace PosProject0._1
 {
@@ -16,6 +18,7 @@ namespace PosProject0._1
         DataTable emp;
         DataRow employee;
         byte[] bImg = null;
+        byte[] password = null;
         string Img = null;
         public frmEmp()
         {
@@ -94,21 +97,20 @@ namespace PosProject0._1
                     cboxdate.Items.Clear();
                     cboxdate.Items.Add(0);
                     #region EmpView
-                    this.EmpView.Columns["EmpPwd"].Visible = false;
+                    //this.EmpView.Columns["Colum1"].Visible = false;
                     this.EmpView.Columns["EmpImg"].Visible = false;
-                    this.EmpView.Columns["GradeNum"].Visible = false;
-                    this.EmpView.Columns["GradeNum1"].Visible = false;
+                    //this.EmpView.Columns["GradeNum"].Visible = false;
+                    //this.EmpView.Columns["GradeNum1"].Visible = false;
                     EmpView.Columns[0].HeaderText = "사원번호";
                     EmpView.Columns[1].HeaderText = "사원명";
-                    EmpView.Columns[2].HeaderText = "비밀번호";
+                    //EmpView.Columns[2].HeaderText = "비밀번호";
                     EmpView.Columns[3].HeaderText = "사진";
                     EmpView.Columns[4].HeaderText = "근무시간";
                     EmpView.Columns[5].HeaderText = "전화번호";
                     EmpView.Columns[6].HeaderText = "입사일";
-                    EmpView.Columns[7].HeaderText = "";
-                    EmpView.Columns[8].HeaderText = "";
-                    EmpView.Columns[9].HeaderText = "직급";
-                    EmpView.Columns[10].HeaderText = "시급";
+                    EmpView.Columns[7].HeaderText = "직급";
+                    EmpView.Columns[8].HeaderText = "시급";
+                    
                     EmpView.Columns[0].Width = 100;
                     EmpView.Columns[1].Width = 120;
                     EmpView.Columns[2].Width = 140;
@@ -173,17 +175,19 @@ namespace PosProject0._1
         }//취소
         private void Parameter(SqlCommand cmd)
         {
+            
             try
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmpId", int.Parse(tboxENum.Text));
                 cmd.Parameters.AddWithValue("@EmpName", tboxEname.Text.Trim().Replace(" ", ""));
-                cmd.Parameters.AddWithValue("@EmpPwd", int.Parse(mboxPass.Text));
+                cmd.Parameters.AddWithValue("@EmpPwd", mboxPass.Text);
                 cmd.Parameters.AddWithValue("@EmpImg", bImg);
                 cmd.Parameters.AddWithValue("@WorkTime", int.Parse(cboxdate.Text));
                 cmd.Parameters.AddWithValue("@Phone", mtboxTel.Text);
                 cmd.Parameters.AddWithValue("@GradeName", cboxDept.Text);
                 cmd.Parameters.AddWithValue("@Hiredate", DateTime.Parse(dateTimePicker1.Text));
+                
             }
             catch (FormatException)
             {
@@ -192,7 +196,6 @@ namespace PosProject0._1
         }//속성//예외처리
         private void frmEmp_Load(object sender, EventArgs e)
         {
-            
             EmpLoad();
             clsVirtualKB.Open();
             mboxPass.PasswordChar = '*';
@@ -218,7 +221,7 @@ namespace PosProject0._1
                         }
                         catch (SqlException)
                         {
-                            MessageBox.Show("데이터가 유효하지 않아 상품 저장을 실패 하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("데이터가 유효하지 않아 직원 저장을 실패 하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     Resets(ds);
@@ -288,7 +291,7 @@ namespace PosProject0._1
                 mboxPass.Text = EmpView.CurrentRow.Cells[2].Value.ToString();
                 mtboxTel.Text = EmpView.CurrentRow.Cells[5].Value.ToString();
                 cboxdate.Text = EmpView.CurrentRow.Cells[4].Value.ToString();
-                cboxDept.Text = EmpView.CurrentRow.Cells[9].Value.ToString();
+                cboxDept.Text = EmpView.CurrentRow.Cells[7].Value.ToString();
                 lbldate.Text = EmpView.CurrentRow.Cells[6].Value.ToString();
             }
             catch (NullReferenceException)
